@@ -1,8 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --token-d98a4c00-7e0c-42c7-87be-9d10760cb03b: rgb(237, 75, 57);
+  --token-e5a511bf-849c-4ac6-b942-175c537ace13: rgb(13, 13, 13);
+  --token-muted-999: rgb(153, 153, 153);
+  --token-9811e40b-3ed8-4237-98e5-61535bb22d2f: rgb(224, 224, 224);
+  --token-2d91bfb1-1bb0-467e-bf37-8ef020f4f815: rgb(217, 217, 217);
 }
 
 @theme inline {

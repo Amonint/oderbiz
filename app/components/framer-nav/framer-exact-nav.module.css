@@ -1,0 +1,136 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  opacity: 1;
+  transform: none;
+  will-change: transform;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.logoSvg {
+  image-rendering: pixelated;
+  flex-shrink: 0;
+  opacity: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-end;
+  opacity: 1;
+}
+
+.toggleWrap {
+  transform: perspective(500px) rotate(180deg);
+  opacity: 1;
+}
+
+.menu {
+  opacity: 1;
+}
+
+.menuInner {
+  width: 100%;
+  opacity: 1;
+}
+
+.menuRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+  opacity: 1;
+}
+
+.location {
+  --framer-paragraph-spacing: 0px;
+  transform: none;
+  opacity: 1;
+}
+
+.locationHeading {
+  margin: 0;
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--token-e5a511bf-849c-4ac6-b942-175c537ace13, rgb(13, 13, 13));
+}
+
+.tagline {
+  --extracted-a0htzi: var(
+    --token-e5a511bf-849c-4ac6-b942-175c537ace13,
+    rgb(153, 153, 153)
+  );
+  --framer-paragraph-spacing: 0px;
+  transform: none;
+  opacity: 1;
+}
+
+.taglineHeading {
+  margin: 0;
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(
+    --extracted-a0htzi,
+    var(--token-e5a511bf-849c-4ac6-b942-175c537ace13, rgb(153, 153, 153))
+  );
+}
+
+.rollingTextInner {
+  --font-size: 18px;
+  --text: var(--token-e5a511bf-849c-4ac6-b942-175c537ace13, rgb(13, 13, 13));
+  --line-height-abs: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  display: flex;
+  overflow: hidden;
+  width: max-content;
+  font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+  font-size: 18px;
+  text-transform: none;
+  user-select: none;
+  text-shadow: 0 var(--line-height-abs) 0 var(--text);
+}
+
+.rollingTextInner span {
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  white-space: pre;
+  flex-shrink: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: 20px;
+  color: var(--text);
+}
