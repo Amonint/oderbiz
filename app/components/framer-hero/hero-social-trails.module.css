@@ -1,0 +1,51 @@
+.trailContainer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.particle {
+  position: absolute;
+  width: 48px;
+  height: auto;
+  transform: translate(-50%, -50%) scale(var(--start-scale, 0.8)) rotate(0deg);
+  opacity: 0;
+  pointer-events: none;
+  animation: trailFloat 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.particle img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  user-select: none;
+}
+
+@keyframes trailFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+  }
+  15% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(var(--start-scale, 0.8)) rotate(calc(var(--rotation, 0deg) * 0.3));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+        calc(-50% + var(--drift-x, 0px)),
+        calc(-50% + var(--drift-y, -30px))
+      )
+      scale(0.15)
+      rotate(var(--rotation, 15deg));
+  }
+}
+
+@media (max-width: 720px) {
+  .trailContainer {
+    display: none;
+  }
+}

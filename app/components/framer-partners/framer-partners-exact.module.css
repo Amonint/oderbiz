@@ -1,0 +1,166 @@
+.section {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 48px 0 64px;
+  background: var(--brand-magenta, #d90754);
+  color: #ffffff;
+}
+
+.inner {
+  padding: 0 24px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.headingWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 90%;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.headingLine {
+  display: block;
+}
+
+.description {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  line-height: 120%;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+}
+
+@media (max-width: 640px) {
+  .heading {
+    font-size: 44px;
+  }
+}
+
+.ticker {
+  width: 100%;
+  margin-top: 0;
+}
+
+.ticker + .ticker {
+  margin-top: 16px;
+}
+
+.mask {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  will-change: transform;
+}
+
+.marqueeRowActive {
+  animation-name: partners-marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 0 0 auto;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 143px;
+}
+
+.logoFrame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes partners-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-1 * var(--partners-loop, 0px)), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeRowActive {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .marqueeRow {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .marqueeRowActive {
+    animation: none;
+    transform: none;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .listDup {
+    display: none;
+  }
+
+  .item {
+    width: auto;
+    height: 48px;
+  }
+
+  .ticker + .ticker {
+    margin-top: 16px;
+  }
+}
