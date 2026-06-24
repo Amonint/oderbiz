@@ -63,7 +63,7 @@ export async function generateMetadata({
       },
     },
     icons: {
-      icon: "/assets/cropped-android-chrome-512x512-1.png",
+      icon: [{ url: "/favicon.ico", sizes: "any" }],
       apple: "/assets/cropped-android-chrome-512x512-1.png",
     },
     alternates: {
