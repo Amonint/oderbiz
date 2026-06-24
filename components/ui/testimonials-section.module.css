@@ -104,6 +104,18 @@
 .avatar {
   width: 28px;
   height: 28px;
+  background: #fff;
+}
+
+.avatarImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.avatarImageLogo {
+  object-fit: contain;
+  object-position: center;
+  padding: 4px;
 }
 
 .name {

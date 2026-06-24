@@ -1,3 +1,5 @@
+import { publicMediaUrl } from "@/app/lib/agency-media";
+
 export type PartnerLogo = {
   id: string;
   src: string;
@@ -6,33 +8,34 @@ export type PartnerLogo = {
 
 const MARCAS = "/assets/marcas";
 
+function partnerLogo(id: string, file: string, alt: string): PartnerLogo {
+  return {
+    id,
+    src: publicMediaUrl(`${MARCAS}/${file}`),
+    alt,
+  };
+}
+
 export const PARTNERS_TICK_1: readonly PartnerLogo[] = [
-  { id: "tec", src: `${MARCAS}/logo-TEC_BLANCO.png`, alt: "UTPL TEC" },
-  {
-    id: "formacion-permanente",
-    src: `${MARCAS}/logo-formacion-permanente.png`,
-    alt: "Formación Permanente UTPL",
-  },
-  {
-    id: "posgrado",
-    src: `${MARCAS}/LOGO-POSGRADO.png`,
-    alt: "iPosgrados | Universidad Politécnica Salesiana Ecuador",
-  },
-  { id: "piscotel", src: `${MARCAS}/piscotel.png`, alt: "PSICOTELCON" },
-  { id: "soy-plus", src: `${MARCAS}/soy-+-blanco.png`, alt: "soy+ cultural utpl" },
+  partnerLogo("utpl", "logo-blanco-utpl.png", "UTPL"),
+  partnerLogo("utpl-tec", "utpl-tec.png", "UTPL TEC"),
+  partnerLogo(
+    "formacion-permanente",
+    "logo-formacion-permanente.png",
+    "Formación Permanente UTPL",
+  ),
+  partnerLogo(
+    "iposgrados",
+    "LOGO-POSGRADO.png",
+    "iPosgrados | Universidad Politécnica Salesiana Ecuador",
+  ),
+  partnerLogo("maestrias-utpl", "maestrias_utpl-1.png", "Maestrías UTPL"),
+  partnerLogo("nettplus", "logo-blanco-nettplus (1).png", "NETTplus"),
 ];
 
 export const PARTNERS_TICK_2: readonly PartnerLogo[] = [
-  { id: "oderbiz-color", src: `${MARCAS}/LOGO_COLOR.png`, alt: "Oderbiz" },
-  { id: "oderbiz-blanco", src: `${MARCAS}/LOGO_BLANCO.png`, alt: "Oderbiz" },
-  {
-    id: "formacion-permanente-b",
-    src: `${MARCAS}/logo-formacion-permanente-b.png`,
-    alt: "Formación Permanente UTPL",
-  },
-  {
-    id: "posgrado-b",
-    src: `${MARCAS}/LOGO-POSGRADOB.png`,
-    alt: "Maestrías UTPL",
-  },
+  partnerLogo("maxxnet", "maxxnet.png", "MaxxNet"),
+  partnerLogo("piscotelcon", "piscotel.png", "PSICOTELCON"),
+  partnerLogo("mariano-utpl", "MARIANO.png", "Mariano UTPL"),
+  partnerLogo("rectoral-board", "logo-blanco-rectoral.png", "Rectoral Board"),
 ];

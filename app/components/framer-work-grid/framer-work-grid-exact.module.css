@@ -71,6 +71,7 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 @media (max-width: 900px) {
@@ -80,12 +81,14 @@
 }
 
 .cardLink {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   color: inherit;
   box-sizing: border-box;
   min-width: 0;
   overflow: hidden;
+  height: 100%;
 }
 
 .textBlock {
@@ -126,6 +129,11 @@
   line-height: 1.55;
   letter-spacing: 0.01em;
   color: rgba(13, 13, 13, 0.62);
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
 }
 
 .spacer227 {
@@ -137,17 +145,14 @@
 
 .previewShell {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  will-change: transform;
-  opacity: 1;
+  margin-top: auto;
+  flex: 0 0 auto;
 }
 
 .canvasHost {
+  position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 804 / 587;
+  aspect-ratio: 16 / 10;
   background: var(
     --token-2d91bfb1-1bb0-467e-bf37-8ef020f4f815,
     rgb(217, 217, 217)
@@ -157,8 +162,6 @@
 }
 
 .previewImage {
-  display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  object-position: center;
 }

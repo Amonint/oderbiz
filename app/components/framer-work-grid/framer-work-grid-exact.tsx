@@ -71,14 +71,7 @@ export async function FramerWorkGridExact() {
                     </div>
                     <div className={`framer-227wem ${styles.spacer227}`} />
                   </div>
-                  <div
-                    className={`framer-1klr08c ${styles.previewShell}`}
-                    style={{
-                      willChange: "transform",
-                      opacity: 1,
-                      transform: `scale(${item.previewScale})`,
-                    }}
-                  >
+                  <div className={`framer-1klr08c ${styles.previewShell}`}>
                     <div
                       className="framer-22dy18-container hidden-1tqphhv hidden-12a2gtg"
                       data-code-component-plugin-id="84d4c1"
@@ -89,8 +82,7 @@ export async function FramerWorkGridExact() {
                           src={item.imageUrl}
                           alt={t("previewAlt", { label })}
                           className={styles.previewImage}
-                          width={1608}
-                          height={1174}
+                          fill
                           sizes="(max-width: 1024px) 90vw, 45vw"
                         />
                       </div>

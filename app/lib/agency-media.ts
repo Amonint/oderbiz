@@ -149,6 +149,22 @@ export const WORK_GRID_ITEM_IMAGES: Record<PortfolioItemId, string> = {
 
 export const WORK_GRID_IMAGE_URLS: readonly string[] = Object.values(WORK_GRID_ITEM_IMAGES);
 
+const TESTIMONIALS = "/assets/testimonial";
+
+export const TESTIMONIAL_AVATARS = {
+  marisol: publicMediaUrl(`${TESTIMONIALS}/piscotelfoto.png`),
+  ipAccess: publicMediaUrl(`${TESTIMONIALS}/IP-ACCESS-LOGO.png`),
+  ortam: publicMediaUrl(`${TESTIMONIALS}/ORTAM-LOGO.png`),
+  elizabeth: publicMediaUrl(`${TESTIMONIALS}/logo-soy-mas.png`),
+  oscar: publicMediaUrl(
+    `${TESTIMONIALS}/WhatsApp-Image-2021-09-02-at-11.11.18-AM.jpeg`,
+  ),
+  luciano: publicMediaUrl(`${TESTIMONIALS}/Luciano-Rodriguez-.jpeg`),
+  maxxnet: publicMediaUrl(`${TESTIMONIALS}/maxxnet-LOGO.png`),
+} as const;
+
+export type TestimonialAvatarKey = keyof typeof TESTIMONIAL_AVATARS;
+
 /** Logo principal en barra / pie (PNG bajo /LOGO). */
 export const AGENCY_LOGO_MAIN = publicMediaUrl("LOGO/LOGO-ODERBIZ.png");
 

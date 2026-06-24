@@ -12,6 +12,10 @@ import {
 } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import aboutStyles from "@/app/components/framer-about/framer-about-exact.module.css";
+import {
+  TESTIMONIAL_AVATARS,
+  type TestimonialAvatarKey,
+} from "@/app/lib/agency-media";
 import styles from "./testimonials-section.module.css";
 
 const TESTIMONIAL_KEYS = [
@@ -22,24 +26,14 @@ const TESTIMONIAL_KEYS = [
   "oscar",
   "luciano",
   "maxxnet",
-] as const;
+] as const satisfies readonly TestimonialAvatarKey[];
 
-const AVATAR_IMAGES: Record<(typeof TESTIMONIAL_KEYS)[number], string> = {
-  marisol:
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=96&h=96&fit=crop&crop=face",
-  ipAccess:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face",
-  ortam:
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face",
-  elizabeth:
-    "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=96&h=96&fit=crop&crop=face",
-  oscar:
-    "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=96&h=96&fit=crop&crop=face",
-  luciano:
-    "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=96&h=96&fit=crop&crop=face",
-  maxxnet:
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
-};
+const LOGO_AVATAR_KEYS = new Set<TestimonialAvatarKey>([
+  "ipAccess",
+  "ortam",
+  "elizabeth",
+  "maxxnet",
+]);
 
 function getInitials(name: string) {
   return name
@@ -61,7 +55,7 @@ function Testimonials() {
         quote: t(`items.${key}.quote`),
         name: t(`items.${key}.name`),
         org: t(`items.${key}.org`),
-        avatar: AVATAR_IMAGES[key],
+        avatar: TESTIMONIAL_AVATARS[key],
         initials: getInitials(t(`items.${key}.name`)),
       })),
     [t],
@@ -120,7 +114,15 @@ function Testimonials() {
                     <footer className={styles.footer}>
                       <span className={styles.byLabel}>{t("byLabel")}</span>
                       <Avatar className={styles.avatar}>
-                        <AvatarImage src={item.avatar} alt={item.name} />
+                        <AvatarImage
+                          src={item.avatar}
+                          alt={item.name}
+                          className={
+                            LOGO_AVATAR_KEYS.has(item.key)
+                              ? styles.avatarImageLogo
+                              : styles.avatarImage
+                          }
+                        />
                         <AvatarFallback>{item.initials}</AvatarFallback>
                       </Avatar>
                       <span className={styles.name}>{item.name}</span>
