@@ -18,23 +18,23 @@
     "languageSwitcher": "Cambiar idioma"
   },
   "hero": {
-    "headline1": "Marketing .",
-    "headline2": "estrategia",
+    "headline1": "Marketing ·",
+    "headline2": "Estrategia",
     "description": "Agencia creativa de marketing y estrategia para marcas que quieren crecer en lo digital.",
     "socialHandle": "@oderbiz",
     "socialHandleAria": "Síguenos en Instagram @oderbiz"
   },
   "vision": {
-    "headerTitle": "Dirección",
-    "headerSubtitle": "y visión",
+    "headerTitle": "DIRECCIÓN Y",
+    "headerSubtitle": "VISIÓN",
     "headerDescription": "La visión que guía cada proyecto y la relación con las marcas que confían en nosotros. Creemos en el crecimiento sostenible, la comunicación auténtica y resultados que se miden en el tiempo.",
-    "quote": "Este sueño empezó con una idea y hoy ayuda a crear a muchas marcas.",
+    "quote": "Este sueño empezó con una idea… y hoy ayuda a crecer a muchas marcas.",
     "attribution": "Katherine Jiménez - Gerente General",
     "imageAlt": "Katherine Jiménez, Gerente General de Oderbiz"
   },
   "about": {
-    "headerTitle": "¿Quiénes",
-    "headerSubtitle": "somos?",
+    "headerTitle": "¿QUIÉNES",
+    "headerSubtitle": "SOMOS?",
     "headerDescription": "Agencia innovadora líder en contenidos para redes sociales, con servicios integrales para marcas en crecimiento.",
     "paragraph1": "Somos una agencia innovadora líder en la creación de contenidos para redes sociales. Nos enorgullece brindar una extensa variedad de servicios diseñados para satisfacer de manera integral las necesidades de nuestros clientes.",
     "imageAlt": "Equipo Oderbiz trabajando en estrategia"
@@ -42,18 +42,18 @@
   "aboutSpecializations": {
     "headerTitle": "Nos",
     "headerSubtitle": "especializamos en",
-    "headerDescription": "Servicios de Marketing de Contenidos y Estrategia para empresas establecidas y en crecimiento.",
+    "headerDescription": "Servicios de Marketing de Contenidos y Estrategia para empresas establecidas y en crecimiento.\n\nAdoptamos un enfoque holístico del marketing y analizamos el entorno y sus objetivos empresariales, con una visión estratégica de proponer acciones que impulsen las ventajas competitivas de su negocio.\n\nOderbiz proporciona las herramientas necesarias para que su empresa genere ventas en un entorno digital que cambia constantemente. A medida que construye y crece, dirigimos su empresa a la vanguardia del marketing digital, siendo sus socios en cada paso del camino.",
     "bodyIntro": "Adoptamos un enfoque holístico del marketing y analizamos el entorno y sus objetivos empresariales, con una visión estratégica de proponer acciones que impulsen las ventajas competitivas de su negocio.",
     "paragraph1": "Oderbiz proporciona las herramientas necesarias para que su empresa genere ventas en un entorno digital que cambia constantemente. A medida que construye y crece, dirigimos su empresa a la vanguardia del marketing digital, siendo sus socios en cada paso del camino.",
     "specialization1": "Estrategia digital y acompañamiento ejecutivo para empresas.",
     "specialization2": "Creación de contenidos y gestión de redes sociales bajo demanda.",
     "specialization3": "Diseño gráfico y video ilimitado para empresas.",
     "specialization1Title": "Estrategia digital",
-    "specialization1Description": "Acompañamiento ejecutivo\npara empresas en crecimiento\ncon visión estratégica.",
+    "specialization1Description": "Acompañamiento ejecutivo\npara empresas en crecimiento\ncon visión estratégica.\n\nEstrategia digital y acompañamiento ejecutivo para empresas.",
     "specialization2Title": "Contenido y redes",
-    "specialization2Description": "Creación de contenidos\ny gestión de redes sociales\nbajo demanda.",
+    "specialization2Description": "Creación de contenidos\ny gestión de redes sociales\nbajo demanda.\n\nCreación de contenidos y gestión de redes sociales bajo demanda.",
     "specialization3Title": "Diseño y video",
-    "specialization3Description": "Diseño gráfico y video\nilimitado para empresas\nque buscan impacto.",
+    "specialization3Description": "Diseño gráfico y video\nilimitado para empresas\nque buscan impacto.\n\nDiseño gráfico y video ilimitado para empresas.",
     "specialization4Title": "Resultados medibles",
     "specialization4Description": "Analizamos cada acción\ncon datos claros para\noptimizar tu inversión.",
     "imageAlt": "Portafolio de proyectos digitales de Oderbiz"
@@ -73,8 +73,8 @@
     "pillar3ImageAlt": "Proyecto estratégico con resultados medibles"
   },
   "fortalezas": {
-    "headerTitle": "Nuestras",
-    "headerSubtitle": "fortalezas",
+    "headerTitle": "NUESTRAS",
+    "headerSubtitle": "FORTALEZAS",
     "headerDescription": "Creatividad, procesos estructurados y enfoque en resultados para marcas que buscan crecer con propósito. Cada proyecto se respalda con un equipo multidisciplinario y metodologías probadas en el mercado.",
     "intro1": "Contamos con un equipo de profesionales creativos que trabajan juntos para crear contenidos de alta calidad para redes sociales.",
     "intro2": "Nos enfocamos en la innovación y la creatividad para ofrecer a nuestros clientes una experiencia única y diferenciada.",
@@ -88,8 +88,8 @@
     "imageAlt": "Equipo creativo de Oderbiz en producción de contenidos"
   },
   "services": {
-    "headerTitle": "Nuestros",
-    "headerSubtitle": "Servicios",
+    "headerTitle": "NUESTROS",
+    "headerSubtitle": "SERVICIOS",
     "headerDescription": "Ofrecemos marketing integral, creación de contenidos para redes sociales y diseño corporativo a demanda. Cada servicio se adapta a los objetivos de tu marca y a las necesidades de tu audiencia.",
     "marketing": {
       "title": "Marketing Integral",
@@ -114,8 +114,8 @@
     }
   },
   "portfolio": {
-    "headerTitle": "Nuestro",
-    "headerSubtitle": "Trabajo",
+    "headerTitle": "Nuestros",
+    "headerSubtitle": "Proyectos",
     "headerDescription": "Resultados que impactan con cada detalle. Proyectos reales donde estrategia, diseño y ejecución se combinan para marcas que buscan crecer con propósito.",
     "previewAlt": "Proyecto {label}, vista previa",
     "items": {
@@ -127,12 +127,12 @@
       "padreJulian": {
         "titleGroups": ["Padre Julián Lorente", "Cooperativa de Ahorro y Crédito"],
         "serviceGroups": ["Isotipo", "Identidad", "Sistemas Visuales"],
-        "excerpt": "Creación de Isotipo: evolución del logo de la cooperativa hacia un personaje robótico amigable. Concepto: fusión de la solidez institucional con agilidad tecnológica (\"La Julián a un click\"). Sistemas visuales: diseño de iconos de servicio, banners promocionales y adaptación para tiendas digitales (App Store/Google Play)."
+        "excerpt": "●Creación de Isotipo: Evolución del logo de la cooperativa hacia un personaje robótico amigable.\n●Concepto: Fusión de la solidez institucional con agilidad tecnológica (\"La Julián a un click\")\n●Sistemas Visuales: Diseño de iconos de servicio, banners promocionales y adaptación para tiendas digitales (App Store/Google Play)."
       },
       "nettplus": {
         "titleGroups": ["NETTplus", "The Power of Fiber"],
         "serviceGroups": ["Social Media", "Branding", "Publicidad"],
-        "excerpt": "Social Media: creación de parrilla visual (lifestyle, gaming, promocional y utilitario). Branding: adaptación de logos y línea gráfica (azul/verde) en todas las piezas. Publicidad: diseño de artes para planes de fibra óptica y cobertura regional."
+        "excerpt": "● Social Media: Creación de parrilla visual (lifestyle, gaming, promocional y utilitario).\n● Branding: Adaptación de logos y línea gráfica (azul/verde) en todas las piezas.\n● Publicidad: Diseño de artes para planes de fibra óptica y cobertura regional."
       },
       "odertek": {
         "titleGroups": ["ODERTEK", "Technologies S.A."],
@@ -214,14 +214,14 @@
     }
   },
   "partners": {
-    "headingLine1": ["ELLOS", "YA", "CREEN"],
+    "headingLine1": ["ELLOS", "YA", "CONFÍAN"],
     "headingLine2": ["EN", "NOSOTROS"],
     "description": "Marcas que confían en nuestra visión y ejecución. Construimos relaciones a largo plazo basadas en resultados medibles y comunicación transparente.",
     "carouselRow1": "Carrusel de socios y auspiciantes, primera fila",
     "carouselRow2": "Carrusel de socios y auspiciantes, segunda fila"
   },
   "footer": {
-    "tagline": "Agencia creativa de marketing y estrategia. Confianza y estabilidad para grandes proyectos; el respaldo que necesitan marcas en crecimiento en Loja y más allá.",
+    "tagline": "¡Trabajemos juntos! Agencia creativa de marketing y estrategia. Confianza y estabilidad para grandes proyectos; el respaldo que necesitan marcas en crecimiento en Loja y más allá.",
     "navAbout": "Sobre Nosotros",
     "navServices": "Servicios",
     "navWork": "Portafolio",
@@ -242,7 +242,7 @@
     "navAria": "Pie de página"
   },
   "meta": {
-    "title": "Oderbiz | marketing . estrategia",
+    "title": "Oderbiz | Marketing · Estrategia",
     "description": "Somos una agencia innovadora líder en la creación de contenidos para redes sociales. Servicios de Marketing de Contenidos y Estrategia para empresas establecidas y en crecimiento.",
     "keywords": [
       "marketing digital",

@@ -53,7 +53,7 @@ export async function OtherbeesFooter() {
         <div className={styles.contactBlock}>
           <p className={styles.contactItem}>
             <span className={styles.contactLabel}>{t("addressLabel")}</span>
-            Av. José María Vivar Castro y Américo Vespucio, Loja, Ecuador
+            Av. José María Vivar Castro y Américo Vespucio, Loja, Ecuador. Edificio de 5 pisos
           </p>
           <p className={styles.contactItem}>
             <span className={styles.contactLabel}>{t("scheduleLabel")}</span>
