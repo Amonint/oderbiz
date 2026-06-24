@@ -1,12 +1,14 @@
 # Framer Navbar + Hero Exact Restoration Implementation Plan
 
+> Nota de alcance actual: para esta landing no se ejecutan pruebas automatizadas. La validacion final por tarea se limita a `eslint`.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Reconstruir en Next.js las secciones `navbar` y `hero` del extracto Framer con paridad visual y estructural exacta (layout, tipografia, espaciado, colores, canvas reel, loader y estados de animacion visibles).
 
-**Architecture:** Se divide en dos bloques: `FramerExactNav` (navbar) y `FramerHeroExact` (Top text + Reel + Title/Loader). Cada bloque usa subcomponentes pequenos (`ThemeToggle`, `RollingMenuItem`, `HeroWordTicker`, `HeroReelCanvas`) y un modulo CSS por seccion para mantener trazabilidad uno-a-uno con el extracto. La exactitud se valida con pruebas estructurales y screenshot diff por seccion.
+**Architecture:** Se divide en dos bloques: `FramerExactNav` (navbar) y `FramerHeroExact` (Top text + Reel + Title/Loader). Cada bloque usa subcomponentes pequenos (`ThemeToggle`, `RollingMenuItem`, `HeroWordTicker`, `HeroReelCanvas`) y un modulo CSS por seccion para mantener trazabilidad uno-a-uno con el extracto. La validacion final se hace con `eslint` y revision manual visual.
 
-**Tech Stack:** Next.js App Router, React 19, TypeScript, CSS Modules, Vitest + Testing Library, Playwright (screenshot diff local).
+**Tech Stack:** Next.js App Router, React 19, TypeScript, CSS Modules, ESLint.
 
 ---
 

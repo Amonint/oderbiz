@@ -1,32 +1,133 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --token-d98a4c00-7e0c-42c7-87be-9d10760cb03b: rgb(237, 75, 57);
-  --token-e5a511bf-849c-4ac6-b942-175c537ace13: rgb(13, 13, 13);
-  --token-muted-999: rgb(153, 153, 153);
-  --token-9811e40b-3ed8-4237-98e5-61535bb22d2f: rgb(224, 224, 224);
-  --token-2d91bfb1-1bb0-467e-bf37-8ef020f4f815: rgb(217, 217, 217);
+  color-scheme: light;
+  /* —— Paleta Oderbiz —— */
+  --brand-magenta: #d90754;
+  --brand-rose: #bf0f70;
+  --brand-purple: #64278c;
+  --brand-yellow: #fdc831;
+  --brand-orange: #f28f22;
+
+  /* Superficies y texto derivados */
+  --brand-surface: #fdc831;
+  --brand-surface-alt: #fdc831;
+  --brand-ink: #0a0a0a;
+  --brand-ink-strong: #0a0a0a;
+  --brand-on-dark: #ffffff;
+  --brand-on-accent: #ffffff;
+  --brand-muted: color-mix(in oklch, #0a0a0a 50%, #6b7280);
+
+  --brand-gradient: linear-gradient(
+    135deg,
+    var(--brand-magenta) 0%,
+    var(--brand-rose) 28%,
+    var(--brand-purple) 58%,
+    var(--brand-orange) 82%,
+    var(--brand-yellow) 100%
+  );
+
+  /* Tipografía global: Messina Sans (300–900 + italics) */
+  --font-body: var(--font-messina), system-ui, sans-serif;
+  --font-display: var(--font-messina), system-ui, sans-serif;
+  --font-lineup-display: var(--font-messina), system-ui, sans-serif;
+  --font-lineup-body: var(--font-messina), system-ui, sans-serif;
+
+  /* Tokens Framer → marca (compatibilidad con extracto) */
+  --token-b086004c-f114-4ac9-8804-61c670031bc0: var(--brand-ink);
+  --token-91b085f6-f83f-4107-a271-57ff605cb9fa: var(--brand-surface);
+  --token-d21d96dd-3760-403d-b35e-c511262b85ab: var(--brand-purple);
+  --token-edbd19a8-14d1-4b6a-b511-3fd28480302a: var(--brand-orange);
+  --token-6e2ea5ec-2ece-4989-b1a8-fe1248220c08: rgb(196, 196, 196);
+  --background: #f6f5f3;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --muted: #ebeae8;
+  --muted-foreground: #6b7280;
+  --accent: #ebeae8;
+  --accent-foreground: #0a0a0a;
+  --primary: #64278c;
+  --primary-foreground: #ffffff;
+  --secondary: #ebeae8;
+  --secondary-foreground: #0a0a0a;
+  --destructive: #d90754;
+  --destructive-foreground: #ffffff;
+  --border: #e5e4e2;
+  --input: #e5e4e2;
+  --ring: #64278c;
+  --radius: 0.5rem;
+  --token-d98a4c00-7e0c-42c7-87be-9d10760cb03b: var(--brand-magenta);
+  --token-e5a511bf-849c-4ac6-b942-175c537ace13: #0a0a0a;
+  --token-muted-999: var(--brand-muted);
+  --token-9811e40b-3ed8-4237-98e5-61535bb22d2f: var(--brand-surface);
+  --token-2d91bfb1-1bb0-467e-bf37-8ef020f4f815: color-mix(in oklch, var(--brand-purple) 12%, white);
+  --token-b27e3547-de99-4c7d-92e6-eee9fef695b5: color-mix(in oklch, var(--brand-purple) 18%, transparent);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --color-brand-magenta: var(--brand-magenta);
+  --color-brand-rose: var(--brand-rose);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-ink: var(--brand-ink);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-messina), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  position: relative;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+.hero-gradient-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #0a1a16;
+  color: #ffffff;
+}
+
+.hero-gradient-wrap > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-gradient-wrap > nav {
+  flex-shrink: 0;
+}
+
+.hero-gradient-wrap > section {
+  flex: 1;
+  min-height: 0;
 }

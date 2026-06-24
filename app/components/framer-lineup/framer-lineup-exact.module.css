@@ -1,0 +1,7 @@
+.wrap {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--brand-yellow, #fdc831);
+  color: var(--brand-ink);
+  padding: 48px 24px;
+}

@@ -1,0 +1,58 @@
+.root {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: clamp(32px, 5vw, 56px);
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.track {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: max-content;
+  height: clamp(260px, 44vw, 420px);
+  gap: 0;
+  animation: marqueeScroll 140s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.cell {
+  flex-shrink: 0;
+  height: 100%;
+  aspect-ratio: 9 / 16;
+  margin: 0;
+  padding: 0;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  vertical-align: top;
+}

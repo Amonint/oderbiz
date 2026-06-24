@@ -1,0 +1,8 @@
+public/assets/**/*.MOV
+public/assets/**/*.mov
+public/assets/**/*.MP4
+public/videos/*.MOV
+public/videos/*.mov
+public/videos/*.mp4
+node_modules
+.git

@@ -1,0 +1,28 @@
+.cloud {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .cloud {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: clamp(360px, 46vh, 520px);
+    margin-top: 8px;
+    margin-bottom: 2px;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+}
+
+.imageWrapper {
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}

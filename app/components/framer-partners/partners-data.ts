@@ -4,19 +4,27 @@ export type PartnerLogo = {
   alt: string;
 };
 
+const MARCAS = "/assets/marcas";
+
 export const PARTNERS_TICK_1: readonly PartnerLogo[] = [
-  { id: "nettplus", src: "/assets/marcas/logo-nettplus.webp", alt: "Nettplus" },
-  { id: "cifal", src: "/assets/marcas/cifal-miami.webp", alt: "CIFAL Miami" },
-  { id: "tec", src: "/assets/marcas3/logo-blanco-utpl-300x113.png", alt: "TEC" },
-  { id: "loja", src: "/assets/marcas/logo-loja.png", alt: "Loja" },
-  { id: "ups", src: "/assets/marcas3/domingo_savio-300x143.png", alt: "Universidad Politécnica Salesiana" },
-  { id: "marca-11", src: "/assets/marcas3/formacion_permanente-2-300x143.png", alt: "Formación Permanente UTPL" },
+  { id: "tec", src: `${MARCAS}/logo-TEC_BLANCO.png`, alt: "TEC" },
+  {
+    id: "formacion-permanente",
+    src: `${MARCAS}/logo-formacion-permanente.png`,
+    alt: "Formación Permanente UTPL",
+  },
+  { id: "posgrado", src: `${MARCAS}/LOGO-POSGRADO.png`, alt: "Posgrado UTPL" },
+  { id: "piscotel", src: `${MARCAS}/piscotel.png`, alt: "Psicotelcon" },
+  { id: "soy-plus", src: `${MARCAS}/soy-+-blanco.png`, alt: "Soy+" },
 ];
 
 export const PARTNERS_TICK_2: readonly PartnerLogo[] = [
-  { id: "logo-main", src: "/assets/marcas3/maxxnet.png", alt: "MaxxNet" },
-  { id: "logo-final", src: "/assets/marcas/logo-final.png", alt: "Psicotelcon" },
-  { id: "marca-04", src: "/assets/marcas/marca-04.png", alt: "Odertek" },
-  { id: "marca-06", src: "/assets/marcas/marca-06.png", alt: "Koruma" },
-  { id: "marca-08", src: "/assets/marcas/marca-08.png", alt: "Festival Internacional de Artes Vivas" },
+  { id: "oderbiz-color", src: `${MARCAS}/LOGO_COLOR.png`, alt: "Oderbiz" },
+  { id: "oderbiz-blanco", src: `${MARCAS}/LOGO_BLANCO.png`, alt: "Oderbiz" },
+  {
+    id: "formacion-permanente-b",
+    src: `${MARCAS}/logo-formacion-permanente-b.png`,
+    alt: "Formación Permanente UTPL",
+  },
+  { id: "posgrado-b", src: `${MARCAS}/LOGO-POSGRADOB.png`, alt: "Posgrado UTPL" },
 ];

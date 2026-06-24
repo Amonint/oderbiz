@@ -1,173 +1,205 @@
-import Link from "next/link";
-import { NavLocalTime } from "./nav-local-time";
-import { RollingMenuItem } from "./rolling-menu-item";
-import styles from "./framer-exact-nav.module.css";
-import { ThemeToggle } from "./theme-toggle";
+"use client";
 
-const MENU = [
-  {
-    dataFramerName: "home",
-    href: "/",
-    label: "Home",
-    linkClassName: "framer-uijz4x framer-12fazzh",
-    containerClassName: "framer-mgrps-container",
-    showComma: true,
-  },
-  {
-    dataFramerName: "about",
-    href: "/about",
-    label: "About",
-    linkClassName: "framer-tjmgqh framer-12fazzh",
-    containerClassName: "framer-11hl7mm-container",
-    showComma: true,
-  },
-  {
-    dataFramerName: "work",
-    href: "/work",
-    label: "Work",
-    linkClassName: "framer-1l4tx1y framer-12fazzh",
-    containerClassName: "framer-14ebavv-container",
-    showComma: true,
-  },
-  {
-    dataFramerName: "services",
-    href: "/services",
-    label: "Services",
-    linkClassName: "framer-to8pbn framer-12fazzh",
-    containerClassName: "framer-qqyrvh-container",
-    showComma: true,
-  },
-  {
-    dataFramerName: "ai labs",
-    href: "/ai-labs",
-    label: "AI Labs",
-    linkClassName: "framer-12iwozi framer-12fazzh",
-    containerClassName: "framer-1b8y99o-container",
-    showComma: true,
-  },
-  {
-    dataFramerName: "contact",
-    href: "/contact",
-    label: "Contact",
-    linkClassName: "framer-1v4uxuf framer-12fazzh",
-    containerClassName: "framer-1bodzwk-container",
-    showComma: false,
-  },
-] as const;
+import { useState, useCallback, useMemo } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
+
+import { AGENCY_LOGO_WHITE } from "@/app/lib/agency-media";
+import { AGENCY_WHATSAPP_URL } from "@/app/lib/contact";
+import { Link } from "@/i18n/navigation";
+import { RollingMenuItem } from "./rolling-menu-item";
+import { LanguageSwitcher } from "./language-switcher";
+import styles from "./framer-exact-nav.module.css";
 
 export function FramerExactNav() {
+  const t = useTranslations("nav");
+  const tCommon = useTranslations("common");
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const closeDrawer = useCallback(() => setDrawerOpen(false), []);
+
+  const menu = useMemo(
+    () =>
+      [
+        {
+          dataFramerName: "home",
+          href: "#" as const,
+          labelKey: "home" as const,
+          linkClassName: "framer-uijz4x framer-12fazzh",
+          containerClassName: "framer-mgrps-container",
+        },
+        {
+          dataFramerName: "about",
+          href: "#sobre-nosotros" as const,
+          labelKey: "about" as const,
+          linkClassName: "framer-tjmgqh framer-12fazzh",
+          containerClassName: "framer-11hl7mm-container",
+        },
+        {
+          dataFramerName: "services",
+          href: "#servicios" as const,
+          labelKey: "services" as const,
+          linkClassName: "framer-to8pbn framer-12fazzh",
+          containerClassName: "framer-qqyrvh-container",
+        },
+        {
+          dataFramerName: "work",
+          href: "#portafolio" as const,
+          labelKey: "work" as const,
+          linkClassName: "framer-1l4tx1y framer-12fazzh",
+          containerClassName: "framer-14ebavv-container",
+        },
+        {
+          dataFramerName: "partners",
+          href: "#ellos-creen-en-nosotros" as const,
+          labelKey: "partners" as const,
+          linkClassName: "framer-12iwozi framer-12fazzh",
+          containerClassName: "framer-1b8y99o-container",
+        },
+        {
+          dataFramerName: "contact",
+          href: AGENCY_WHATSAPP_URL,
+          labelKey: "contact" as const,
+          linkClassName: "framer-1v4uxuf framer-12fazzh",
+          containerClassName: "framer-1bodzwk-container",
+        },
+      ] as const,
+    [],
+  );
+
   return (
-    <nav
-      className={`framer-17v787v ${styles.nav}`}
-      data-framer-name="Nav Menu"
-      style={{ willChange: "transform", opacity: 1, transform: "none" }}
-    >
-      <Link
-        className="framer-u3en3y framer-1v2nl5"
-        data-framer-name="Logo"
-        href="/"
-        aria-label="Logo"
+    <>
+      <nav
+        className={`framer-17v787v ${styles.nav}`}
+        data-framer-name="Nav Menu"
+        style={{ willChange: "transform", opacity: 1, transform: "none" }}
       >
-        <div
-          data-framer-component-type="SVG"
-          className={`framer-qpdbhg ${styles.logoSvg}`}
-          aria-hidden
+        <Link
+          className={`framer-u3en3y framer-1v2nl5 ${styles.logo}`}
+          data-framer-name="Logo"
+          href="/"
+          aria-label={t("logoAria")}
         >
-          <svg
-            viewBox="0 0 32 32"
-            width="100%"
-            height="100%"
-            preserveAspectRatio="xMidYMid meet"
-            aria-hidden
-          >
-            <rect
-              width="32"
-              height="32"
-              rx="6"
-              fill="var(--token-e5a511bf-849c-4ac6-b942-175c537ace13, rgb(13, 13, 13))"
-            />
-            <path
-              d="M8 10h16v2H8zm0 5h10v2H8zm0 5h14v2H8z"
-              fill="var(--background)"
-            />
-          </svg>
-        </div>
-      </Link>
+          <Image
+            src={AGENCY_LOGO_WHITE}
+            alt={tCommon("brandName")}
+            width={1200}
+            height={384}
+            className={styles.logoImage}
+            priority
+          />
+        </Link>
 
-      <div
-        className={`framer-79zklx ${styles.items}`}
-        data-framer-name="Items"
-        style={{ opacity: 1 }}
-      >
-        <div className="framer-16vozx4-container" style={{ opacity: 1 }}>
-          <div className={styles.toggleWrap}>
-            <ThemeToggle />
-          </div>
-        </div>
-
-        <div className="framer-ok1jlb" data-framer-name="Menu" style={{ opacity: 1 }}>
-          <div className="framer-xdnjn9-container" style={{ opacity: 1 }}>
-            <div
-              className="framer-IMuWK framer-9tme3y framer-v-9tme3y"
-              data-framer-name="All Active"
-              style={{ width: "100%", opacity: 1 }}
-            >
-              <div className={`${styles.menuInner} ${styles.menuRow}`}>
-                {MENU.map((item) => (
-                  <RollingMenuItem
-                    key={item.href}
-                    dataFramerName={item.dataFramerName}
-                    href={item.href}
-                    text={item.label}
-                    linkClassName={item.linkClassName}
-                    containerClassName={item.containerClassName}
-                    showComma={item.showComma}
-                  />
-                ))}
+        <div
+          className={`framer-79zklx ${styles.items}`}
+          data-framer-name="Items"
+          style={{ opacity: 1 }}
+        >
+          <div className="framer-ok1jlb" data-framer-name="Menu" style={{ opacity: 1 }}>
+            <div className="framer-xdnjn9-container" style={{ opacity: 1 }}>
+              <div
+                className="framer-IMuWK framer-9tme3y framer-v-9tme3y"
+                data-framer-name="All Active"
+                style={{ width: "100%", opacity: 1 }}
+              >
+                <div className={`${styles.menuInner} ${styles.menuRow}`}>
+                  {menu.map((item) => (
+                    <RollingMenuItem
+                      key={item.dataFramerName}
+                      dataFramerName={item.dataFramerName}
+                      href={item.href}
+                      text={t(item.labelKey)}
+                      linkClassName={item.linkClassName}
+                      containerClassName={item.containerClassName}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="framer-1jkd2rj" data-framer-name="Info" style={{ opacity: 1 }}>
-        <div className="framer-ugfbwj" style={{ opacity: 1 }}>
-          <div className="framer-gq4dwk" style={{ opacity: 1 }}>
-            <div
-              className={`framer-1k7jery ${styles.location}`}
-              data-framer-name="Location"
-              data-framer-component-type="RichTextContainer"
-            >
-              <h3 className={`framer-text framer-styles-preset-17y0dgk ${styles.locationHeading}`}>
-                Based in India
-              </h3>
-            </div>
-          </div>
-          <div className="framer-lfiytj-container" style={{ opacity: 1 }}>
-            <NavLocalTime />
-          </div>
-        </div>
-        <div
-          className={`framer-113bfs ${styles.tagline}`}
-          data-framer-name="Date"
-          data-framer-component-type="RichTextContainer"
-          style={{
-            ["--extracted-a0htzi" as string]:
-              "var(--token-e5a511bf-849c-4ac6-b942-175c537ace13, rgb(153, 153, 153))",
-          }}
-        >
-          <h3
-            className={`framer-text framer-styles-preset-17y0dgk ${styles.taglineHeading}`}
-            data-styles-preset="BdjQ0UGnY"
-            style={{
-              ["--framer-text-color" as string]:
-                "var(--extracted-a0htzi, var(--token-e5a511bf-849c-4ac6-b942-175c537ace13, rgb(153, 153, 153)))",
-            }}
+        <div className={styles.navActions}>
+          <LanguageSwitcher />
+          <a
+            href={AGENCY_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.btnPrimary}
           >
-            AI-First Creative Solutions
-          </h3>
+            {tCommon("contact")}
+          </a>
+          <Link href="#portafolio" className={styles.btnOutline}>
+            {tCommon("portfolio")}
+          </Link>
         </div>
-      </div>
-    </nav>
+
+        <button
+          className={styles.hamburger}
+          onClick={() => setDrawerOpen((prev) => !prev)}
+          aria-label={drawerOpen ? t("closeMenu") : t("openMenu")}
+          aria-expanded={drawerOpen}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            {drawerOpen ? (
+              <>
+                <line x1="6" y1="6" x2="18" y2="18" />
+                <line x1="6" y1="18" x2="18" y2="6" />
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </>
+            )}
+          </svg>
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {drawerOpen && (
+          <motion.div
+            className={styles.drawer}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          >
+            <div className={styles.drawerLang}>
+              <LanguageSwitcher />
+            </div>
+            {menu.map((item, i) => (
+              <motion.div
+                key={item.dataFramerName}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.04 * i, duration: 0.2 }}
+              >
+                {item.href.startsWith("http") ? (
+                  <a
+                    href={item.href}
+                    className={styles.drawerLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeDrawer}
+                  >
+                    {t(item.labelKey)}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={styles.drawerLink}
+                    onClick={closeDrawer}
+                  >
+                    {t(item.labelKey)}
+                  </Link>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

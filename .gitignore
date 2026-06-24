@@ -12,8 +12,6 @@
 
 # testing
 /coverage
-/test-results/
-/playwright-report/
 
 # next.js
 /.next/
@@ -37,6 +35,15 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Videos fuente (solo para optimización local; en prod se usan /videos/optimized)
+public/assets/**/*.MOV
+public/assets/**/*.mov
+public/assets/**/*.MP4
+public/videos/*.MOV
+public/videos/*.mov
+public/videos/*.mp4
+!public/videos/optimized/**
 
 # typescript
 *.tsbuildinfo
