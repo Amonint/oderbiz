@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 import type { HeroVideoItem } from "@/app/lib/agency-media";
+import { LazyVideoCell } from "@/app/components/shared/lazy-video-cell";
 import styles from "./hero-vertical-video-grid.module.css";
 
 function VideoCard({
@@ -12,40 +11,13 @@ function VideoCard({
   item: HeroVideoItem;
   eager?: boolean;
 }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          void video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: 0.15 },
-    );
-
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <div className={styles.cardWrap}>
       <div className={styles.card}>
-        <video
-          ref={videoRef}
-          src={item.src}
-          poster={item.poster}
-          muted
-          loop
-          playsInline
-          preload={eager ? "auto" : "metadata"}
-          className={styles.video}
-          aria-label={item.alt}
+        <LazyVideoCell
+          item={item}
+          mediaClassName={styles.video}
+          eager={eager}
         />
       </div>
     </div>

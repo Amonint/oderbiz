@@ -15,6 +15,8 @@ export function HeroMobileVideoSequence({
   const [reduceMotion, setReduceMotion] = useState(false);
 
   const current = videos[index] ?? videos[0];
+  const nextIndex = (index + 1) % videos.length;
+  const next = videos[nextIndex];
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -23,6 +25,19 @@ export function HeroMobileVideoSequence({
     mq.addEventListener("change", update);
     return () => mq.removeEventListener("change", update);
   }, []);
+
+  useEffect(() => {
+    if (!next || reduceMotion) return;
+
+    const link = document.createElement("link");
+    link.rel = "prefetch";
+    link.as = "fetch";
+    link.href = next.src;
+    document.head.appendChild(link);
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, [next, reduceMotion]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -47,7 +62,7 @@ export function HeroMobileVideoSequence({
         poster={current.poster}
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         className={styles.video}
         onEnded={reduceMotion ? undefined : handleEnded}
       />

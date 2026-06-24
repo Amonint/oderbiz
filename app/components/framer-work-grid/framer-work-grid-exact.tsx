@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
 import { Link } from "@/i18n/navigation";
 import { ServiceLetterSpans, TitleLetterSpans } from "./letter-spans";
@@ -84,13 +85,13 @@ export async function FramerWorkGridExact() {
                       data-framer-cursor="1azdmuu"
                     >
                       <div className={styles.canvasHost}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                        <Image
                           src={item.imageUrl}
                           alt={t("previewAlt", { label })}
                           className={styles.previewImage}
                           width={1608}
                           height={1174}
+                          sizes="(max-width: 1024px) 90vw, 45vw"
                         />
                       </div>
                     </div>
