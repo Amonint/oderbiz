@@ -1,8 +1,12 @@
-import { Link } from "@/i18n/navigation";
+import { NavSectionLink } from "./nav-section-link";
 import styles from "./framer-exact-nav.module.css";
 
 function isExternalHref(href: string) {
   return href.startsWith("http://") || href.startsWith("https://");
+}
+
+function isSectionHref(href: string) {
+  return href.startsWith("#");
 }
 
 export type RollingMenuItemProps = {
@@ -67,8 +71,22 @@ export function RollingMenuItem({
     );
   }
 
+  if (isSectionHref(href)) {
+    return (
+      <NavSectionLink
+        className={linkClassName}
+        data-framer-name={dataFramerName}
+        data-highlight="true"
+        sectionId={href.slice(1)}
+        aria-label={text}
+      >
+        {inner}
+      </NavSectionLink>
+    );
+  }
+
   return (
-    <Link
+    <a
       className={linkClassName}
       data-framer-name={dataFramerName}
       data-highlight="true"
@@ -76,6 +94,6 @@ export function RollingMenuItem({
       aria-label={text}
     >
       {inner}
-    </Link>
+    </a>
   );
 }

@@ -10,6 +10,7 @@ import { AGENCY_WHATSAPP_URL } from "@/app/lib/contact";
 import { Link } from "@/i18n/navigation";
 import { RollingMenuItem } from "./rolling-menu-item";
 import { LanguageSwitcher } from "./language-switcher";
+import { NavSectionLink } from "./nav-section-link";
 import styles from "./framer-exact-nav.module.css";
 
 export function FramerExactNav() {
@@ -21,13 +22,6 @@ export function FramerExactNav() {
   const menu = useMemo(
     () =>
       [
-        {
-          dataFramerName: "home",
-          href: "#" as const,
-          labelKey: "home" as const,
-          linkClassName: "framer-uijz4x framer-12fazzh",
-          containerClassName: "framer-mgrps-container",
-        },
         {
           dataFramerName: "about",
           href: "#sobre-nosotros" as const,
@@ -55,13 +49,6 @@ export function FramerExactNav() {
           labelKey: "partners" as const,
           linkClassName: "framer-12iwozi framer-12fazzh",
           containerClassName: "framer-1b8y99o-container",
-        },
-        {
-          dataFramerName: "contact",
-          href: AGENCY_WHATSAPP_URL,
-          labelKey: "contact" as const,
-          linkClassName: "framer-1v4uxuf framer-12fazzh",
-          containerClassName: "framer-1bodzwk-container",
         },
       ] as const,
     [],
@@ -129,9 +116,9 @@ export function FramerExactNav() {
           >
             {tCommon("contact")}
           </a>
-          <Link href="#portafolio" className={styles.btnOutline}>
+          <NavSectionLink sectionId="portafolio" className={styles.btnOutline}>
             {tCommon("portfolio")}
-          </Link>
+          </NavSectionLink>
         </div>
 
         <button
@@ -176,25 +163,13 @@ export function FramerExactNav() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.04 * i, duration: 0.2 }}
               >
-                {item.href.startsWith("http") ? (
-                  <a
-                    href={item.href}
-                    className={styles.drawerLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={closeDrawer}
-                  >
-                    {t(item.labelKey)}
-                  </a>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={styles.drawerLink}
-                    onClick={closeDrawer}
-                  >
-                    {t(item.labelKey)}
-                  </Link>
-                )}
+                <NavSectionLink
+                  sectionId={item.href.slice(1)}
+                  className={styles.drawerLink}
+                  onClick={closeDrawer}
+                >
+                  {t(item.labelKey)}
+                </NavSectionLink>
               </motion.div>
             ))}
           </motion.div>

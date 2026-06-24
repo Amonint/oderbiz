@@ -7,6 +7,7 @@ import { HeroMeshGradient } from "@/app/components/framer-hero/hero-mesh-gradien
 import { FramerLineUpExact } from "@/app/components/framer-lineup/framer-lineup-exact";
 import { FramerPartnersExact } from "@/app/components/framer-partners/framer-partners-exact";
 import { FramerExactNav } from "@/app/components/framer-nav/framer-exact-nav";
+import { HashScrollOnLoad } from "@/app/components/framer-nav/hash-scroll-on-load";
 import ServicesSection from "@/app/components/services-section/services-section";
 import { FramerWorkGridExact } from "@/app/components/framer-work-grid/framer-work-grid-exact";
 import { OtherbeesFooter } from "@/app/components/otherbees-footer/otherbees-footer";
@@ -30,6 +31,7 @@ export default async function Home({ params }: PageProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <HashScrollOnLoad />
       <div className="hero-gradient-wrap">
         <HeroMeshGradient />
         <FramerExactNav />
