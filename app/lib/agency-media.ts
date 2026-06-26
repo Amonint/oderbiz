@@ -35,6 +35,8 @@ export const VARIOS_IMAGES = {
   studio: publicMediaUrl(`${VARIOS}/DSC08083.JPG (2).jpeg`),
   event: publicMediaUrl(`${VARIOS}/_DSC5637.JPG.jpeg`),
   production: publicMediaUrl(`${VARIOS}/_DSC5650.JPG (3).jpeg`),
+  acompañamiento: publicMediaUrl(`${VARIOS}/3-3.png`),
+  strength2Image: publicMediaUrl(`${VARIOS}/DSC5754-scaled.jpg`),
 } as const;
 
 export const SPECIALIZATIONS_IMAGE = VARIOS_IMAGES.studio;
@@ -42,7 +44,7 @@ export const FORTALEZAS_IMAGE = VARIOS_IMAGES.event;
 
 export const FORTALEZAS_IMAGES = {
   strength1: VARIOS_IMAGES.event,
-  strength2: VARIOS_IMAGES.team,
+  strength2: VARIOS_IMAGES.strength2Image,
   strength3: VARIOS_IMAGES.production,
 } as const;
 
@@ -50,7 +52,7 @@ export type FortalezasImageKey = keyof typeof FORTALEZAS_IMAGES;
 
 export const PILLAR_IMAGES = {
   pillar1: VARIOS_IMAGES.studio,
-  pillar2: VARIOS_IMAGES.team,
+  pillar2: VARIOS_IMAGES.acompañamiento,
   pillar3: VARIOS_IMAGES.production,
 } as const;
 
@@ -94,9 +96,6 @@ export const HERO_VIDEOS: readonly HeroVideoItem[] = [
   heroVideo("IMG_2592", "Oderbiz — grabación corporativa"),
   heroVideo("IMG_2594", "Oderbiz — behind the scenes"),
   heroVideo("IMG_2603", "Oderbiz — producción de marca"),
-  heroVideo("IMG_2667", "Oderbiz — cobertura audiovisual"),
-  heroVideo("IMG_2669", "Oderbiz — evento corporativo"),
-  heroVideo("IMG_2702", "Oderbiz — producción integral"),
   heroVideo("IMG_2721", "Oderbiz — cobertura de lanzamiento"),
   heroVideo("IMG_2722", "Oderbiz — evento en vivo"),
   heroVideo("IMG_9728", "Oderbiz — producción audiovisual"),
@@ -104,19 +103,17 @@ export const HERO_VIDEOS: readonly HeroVideoItem[] = [
     "video-output-FBB80519-82FC-487D-BA56-E7040E4DF516-1",
     "Oderbiz — contenido corporativo",
   ),
+  heroVideo("njj", "Oderbiz — contenido adicional"),
 ] as const;
 
 /** Videos de la sección Quiénes somos — desde /assets/aboutus, comprimidos para web. */
 export const ABOUT_VIDEOS: readonly HeroVideoItem[] = [
   heroVideo("copy_A7A4BBCD-EF10-407D-A369-655D56E0B83D", "Oderbiz — producción en estudio"),
   heroVideo("copy_F6B1FCD3-AE86-4207-BAFA-44744CFF350E", "Oderbiz — producción en vivo"),
-  heroVideo("copy_FF8EDE12-FC4D-47CC-AE48-6AD83D8C2165", "Oderbiz — cobertura de evento"),
   heroVideo("fa8f04c905c24b3a91fec9dc4968fb82", "Oderbiz — contenido corporativo"),
-  heroVideo("IMG_0037", "Oderbiz — equipo en acción"),
   heroVideo("IMG_2473", "Oderbiz — grabación audiovisual"),
   heroVideo("IMG_2475", "Oderbiz — behind the scenes"),
   heroVideo("IMG_2485", "Oderbiz — producción de marca"),
-  heroVideo("IMG_2702", "Oderbiz — cobertura integral"),
   heroVideo("IMG_2721", "Oderbiz — cobertura de lanzamiento"),
   heroVideo("IMG_2722", "Oderbiz — evento en vivo"),
   heroVideo("IMG_2749", "Oderbiz — contenido digital"),
