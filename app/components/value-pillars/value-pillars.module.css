@@ -6,6 +6,7 @@
   letter-spacing: -0.05em;
   line-height: 1;
   color: #ffffff;
+  text-align: left;
 }
 
 .sectionSubtitleOnDark {
@@ -16,6 +17,7 @@
   letter-spacing: -0.05em;
   line-height: 1;
   color: #ffffff;
+  text-align: left;
 }
 
 .sectionDescriptionOnDark {
@@ -26,6 +28,7 @@
   letter-spacing: -0.02em;
   line-height: 140%;
   color: rgba(255, 255, 255, 0.8);
+  text-align: justify;
 }
 
 @media (max-width: 640px) {
