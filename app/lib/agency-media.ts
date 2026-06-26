@@ -40,6 +40,14 @@ export const VARIOS_IMAGES = {
 export const SPECIALIZATIONS_IMAGE = VARIOS_IMAGES.studio;
 export const FORTALEZAS_IMAGE = VARIOS_IMAGES.event;
 
+export const FORTALEZAS_IMAGES = {
+  strength1: VARIOS_IMAGES.event,
+  strength2: VARIOS_IMAGES.team,
+  strength3: VARIOS_IMAGES.production,
+} as const;
+
+export type FortalezasImageKey = keyof typeof FORTALEZAS_IMAGES;
+
 export const PILLAR_IMAGES = {
   pillar1: VARIOS_IMAGES.studio,
   pillar2: VARIOS_IMAGES.team,
@@ -164,6 +172,17 @@ export const TESTIMONIAL_AVATARS = {
 } as const;
 
 export type TestimonialAvatarKey = keyof typeof TESTIMONIAL_AVATARS;
+
+/** Relación ancho/alto del logo o retrato en tarjetas de testimonio (patrón Ventriloc). */
+export const TESTIMONIAL_LOGO_RATIOS: Record<TestimonialAvatarKey, number> = {
+  marisol: 1,
+  ipAccess: 1.47,
+  ortam: 1.2,
+  elizabeth: 1.1,
+  oscar: 1,
+  luciano: 1,
+  maxxnet: 1.35,
+};
 
 /** Logo principal en barra / pie (PNG bajo /LOGO). */
 export const AGENCY_LOGO_MAIN = publicMediaUrl("LOGO/LOGO-ODERBIZ.png");

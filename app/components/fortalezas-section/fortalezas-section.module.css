@@ -1,178 +1,185 @@
-.root {
+.sectionHomeList {
   width: 100%;
-  padding: 0 0 clamp(48px, 8vw, 80px);
   background-color: var(--background, #f6f5f3);
   color: var(--brand-ink-strong);
   box-sizing: border-box;
+  border-radius: 12px;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: clamp(40px, 7vw, 112px) clamp(40px, 7vw, 112px);
-  align-items: center;
+.paddingGlobal {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin-inline: auto;
-  padding: clamp(32px, 5vw, 64px) clamp(32px, 6vw, 80px)
-    clamp(48px, 8vw, 80px);
+  padding-inline: clamp(24px, 5vw, 80px);
+  padding-bottom: clamp(64px, 10vw, 96px);
   box-sizing: border-box;
 }
 
-@media (max-width: 900px) {
-  .content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding-inline: 24px;
-    padding-top: 24px;
-  }
-}
-
-.imageColumn {
-  position: sticky;
-  top: 0;
-  align-self: start;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding-inline: clamp(8px, 2vw, 24px);
-  box-sizing: border-box;
-}
-
-.imageFrame {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin-inline: auto;
-  aspect-ratio: 3 / 4;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-@media (max-width: 900px) {
-  .imageColumn {
-    position: relative;
-    top: auto;
-    padding-inline: 0;
-  }
-
-  .imageFrame {
-    max-width: min(480px, 100%);
-    aspect-ratio: 16 / 10;
-    max-height: 420px;
-  }
-}
-
-.image {
-  object-fit: cover;
-}
-
-.strengthsColumn {
+.introComponent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  max-width: 520px;
-  margin-inline: auto;
-  padding-inline: clamp(8px, 2vw, 24px);
-  padding-block: clamp(8px, 2vw, 24px);
-  box-sizing: border-box;
+  gap: clamp(24px, 4vw, 40px);
 }
 
-@media (min-width: 901px) {
-  .strengthsColumn {
-    justify-self: center;
-  }
-}
-
-.divider {
+.dividerHorizontal {
   width: 100%;
   height: 1px;
-  margin: 0;
-  padding: 0;
-  border: none;
   background: color-mix(in oklch, var(--brand-ink-strong) 14%, transparent);
 }
 
-.strengthCard {
-  margin: 0;
-  padding: clamp(28px, 4vw, 40px) 0;
-  position: relative;
+.introText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 640px;
 }
 
-.strengthTitle {
+.textSizeSmall {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: color-mix(in oklch, var(--brand-ink-strong) 55%, transparent);
+}
+
+.headingStyleH2 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--brand-ink-strong);
+}
+
+.spacerXlarge {
+  height: clamp(48px, 8vw, 80px);
+}
+
+.spacerMedium {
+  height: clamp(32px, 5vw, 56px);
+}
+
+.hideMobilePortrait {
+  display: block;
+}
+
+.homeListComponent {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(64px, 12vw, 128px);
+  padding: clamp(8px, 2vw, 16px);
+  border-radius: 12px;
+}
+
+.homeListWrapper {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30vw;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.homeListWrapper.imageLeft {
+  grid-template-columns: 30vw minmax(0, 1fr);
+}
+
+.homeListWrapper.imageLeft .homeListFirstWrapper {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.homeListWrapper.imageLeft .homeListSecondWrapper {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.homeListFirstWrapper {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.homeListNumber {
+  flex-shrink: 0;
+}
+
+.homeListNumberText {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: color-mix(in oklch, var(--brand-ink-strong) 35%, transparent);
+}
+
+.homeListText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.headingStyleH4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.25;
   color: var(--brand-ink-strong);
 }
 
-.strengthBody {
-  margin: 12px 0 0;
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.65;
-  letter-spacing: -0.02em;
-  color: color-mix(in oklch, var(--brand-ink-strong) 75%, transparent);
-}
-
-.closing {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(28px, 4vw, 40px);
-  width: 100%;
-  max-width: 640px;
-  margin-inline: auto;
-  padding-top: clamp(8px, 2vw, 16px);
-  box-sizing: border-box;
-}
-
-.closingParallax {
-  width: 100%;
-}
-
-.closingInner {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: clamp(28px, 4vw, 40px) clamp(24px, 4vw, 40px);
-  border-radius: 4px;
-  background: color-mix(in oklch, var(--brand-ink-strong) 4%, var(--background));
-  box-sizing: border-box;
-}
-
-.closingLead {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-  color: var(--brand-ink-strong);
-  text-wrap: balance;
-}
-
-.closingText {
+.textSizeRegular {
   margin: 0;
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.65;
   letter-spacing: -0.02em;
-  color: color-mix(in oklch, var(--brand-ink-strong) 75%, transparent);
 }
 
-.revealBlock {
-  display: block;
+.textStyleMuted {
+  color: color-mix(in oklch, var(--brand-ink-strong) 65%, transparent);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .closingInner {
-    transform: none !important;
-    opacity: 1 !important;
+.homeListSecondWrapper {
+  position: relative;
+  width: 30vw;
+  height: 20vw;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.isRight {
+  justify-self: end;
+}
+
+.homeListImage {
+  object-fit: cover;
+}
+
+@media (max-width: 901px) {
+  .homeListWrapper,
+  .homeListWrapper.imageLeft {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .homeListWrapper.imageLeft .homeListFirstWrapper,
+  .homeListWrapper.imageLeft .homeListSecondWrapper {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .homeListSecondWrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    justify-self: stretch !important;
+  }
+
+  .hideMobilePortrait {
+    display: none;
   }
 }
