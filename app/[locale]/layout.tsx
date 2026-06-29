@@ -4,6 +4,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 
+import { SmoothScrollProvider } from "@/app/components/smooth-scroll/smooth-scroll-provider";
 import { messinaSans } from "../fonts";
 import "../globals.css";
 import { routing, type Locale } from "@/i18n/routing";
@@ -91,9 +92,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       className={`${messinaSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <SmoothScrollProvider>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

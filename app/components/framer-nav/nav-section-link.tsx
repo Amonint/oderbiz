@@ -3,7 +3,7 @@
 import type { ComponentProps, MouseEvent, ReactNode } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
-import { scrollToSection } from "@/app/lib/scroll-to-section";
+import { useScrollToSection } from "@/app/lib/scroll-to-section";
 
 type NavSectionLinkProps = Omit<ComponentProps<"a">, "href"> & {
   sectionId: string;
@@ -18,6 +18,7 @@ export function NavSectionLink({
 }: NavSectionLinkProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const { scrollToSection } = useScrollToSection();
   const hash = `#${sectionId.replace(/^#/, "")}`;
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {

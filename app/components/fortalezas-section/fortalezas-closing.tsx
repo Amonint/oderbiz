@@ -24,8 +24,14 @@ export function FortalezasClosing({ lead, text }: FortalezasClosingProps) {
 
   return (
     <div ref={ref} className="am-testimonial-closing-wrap">
-      <div className="am-testimonial-inner-wrapper">
-        <div className="am-testimonial-text-wrapper">
+      <div
+        className="am-testimonial-inner-wrapper"
+        data-wave-anchor="closing-card"
+      >
+        <div
+          className="am-testimonial-text-wrapper"
+          data-wave-zone="closing-text"
+        >
           <Image
             src={AGENCY_LOGO_MAIN}
             alt={tCommon("brandName")}

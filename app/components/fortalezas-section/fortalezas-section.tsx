@@ -10,6 +10,7 @@ import aboutStyles from "@/app/components/framer-about/framer-about-exact.module
 
 import { STRENGTH_ITEMS } from "./fortalezas-data";
 import { FortalezasClosing } from "./fortalezas-closing";
+import { RainbowWaveFortalezas } from "./rainbow-wave-fortalezas";
 import styles from "./fortalezas-section.module.css";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -36,13 +37,19 @@ export function FortalezasSection() {
   const imageAlt = t("imageAlt");
 
   return (
-    <section id="fortalezas" aria-labelledby="fortalezas-heading">
+    <section
+      id="fortalezas"
+      aria-labelledby="fortalezas-heading"
+      style={{ position: "relative" }}
+    >
       <header
         ref={headerRef}
+        data-wave-zone="header"
         className={`${aboutStyles.sectionHeader} ${aboutStyles.sectionHeaderInFlow}`}
       >
         <motion.div
           className={aboutStyles.headerTitles}
+          data-wave-zone="header-text"
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={
             reduceMotion || headerInView
@@ -58,6 +65,7 @@ export function FortalezasSection() {
         </motion.div>
         <motion.p
           className={aboutStyles.sectionDescription}
+          data-wave-zone="header-text"
           initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           animate={
             reduceMotion || headerInView
@@ -71,6 +79,7 @@ export function FortalezasSection() {
       </header>
 
       <div className={styles.sectionHomeList}>
+        <RainbowWaveFortalezas />
         <div className={styles.paddingGlobal}>
           <div className={styles.introComponent}>
             <div className={styles.dividerHorizontal} />
@@ -82,15 +91,20 @@ export function FortalezasSection() {
             {strengths.map((strength, index) => (
               <div
                 key={strength.titleKey}
+                data-wave-item=""
                 className={`${styles.homeListWrapper} ${index === 1 ? styles.imageLeft : ""}`}
               >
                 <div className={styles.homeListFirstWrapper}>
-                  <div className={styles.homeListNumber}>
+                  <div
+                    className={styles.homeListNumber}
+                    data-wave-anchor="number"
+                  >
                     <div className={styles.homeListNumberText}>
                       {String(index + 1).padStart(2, "0")}
                     </div>
+                    <div className={styles.numberBar} />
                   </div>
-                  <div className={styles.homeListText}>
+                  <div className={styles.homeListText} data-wave-zone="text">
                     <h2 className={styles.headingStyleH4}>{strength.title}</h2>
                     {strength.description ? (
                       <p
@@ -103,6 +117,7 @@ export function FortalezasSection() {
                 </div>
                 <div
                   className={`${styles.homeListSecondWrapper} ${index % 2 === 0 ? styles.isRight : ""}`}
+                  data-wave-zone="image"
                 >
                   <Image
                     src={strength.imageSrc}
