@@ -32,6 +32,14 @@
     "attribution": "Katherine Jiménez - Gerente General",
     "imageAlt": "Katherine Jiménez, Gerente General de Oderbiz"
   },
+
+  "ourStory": {
+    "heading": "Nuestra historia",
+    "subheading": "Así trabajamos para transformar marcas",
+    "intro1": "Consultoría de marketing estratégico para marcas en crecimiento.",
+    "intro2": "Latinoamérica y Estados Unidos, con una misma visión.",
+    "intro3": "Estrategia, branding y contenido que generan oportunidades reales."
+  },
   "about": {
     "headerTitle": "¿QUIÉNES",
     "headerSubtitle": "SOMOS?",

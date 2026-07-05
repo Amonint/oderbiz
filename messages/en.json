@@ -32,6 +32,14 @@
     "attribution": "Katherine Jiménez - General Manager",
     "imageAlt": "Katherine Jiménez, General Manager at Oderbiz"
   },
+
+  "ourStory": {
+    "heading": "Our story",
+    "subheading": "How we work to transform brands",
+    "intro1": "Strategic marketing consulting for growing brands.",
+    "intro2": "Latin America and the United States, one shared vision.",
+    "intro3": "Strategy, branding, and content that create real opportunities."
+  },
   "about": {
     "headerTitle": "Who",
     "headerSubtitle": "are we?",

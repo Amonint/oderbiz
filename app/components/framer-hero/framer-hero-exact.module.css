@@ -1,9 +1,10 @@
 /* Superside-style hero tokens */
 .heroSection {
-  --hero-bg: #0a1a16;
-  --hero-headline: #b8f5d4;
-  --hero-cta: #d9f99d;
-  --hero-cta-text: #0a1a16;
+  --hero-bg: var(--brand-coral, #ff425d);
+  --hero-headline: #ffffff;
+  --hero-headline-accent: #0a1a16;
+  --hero-cta: #0a1a16;
+  --hero-cta-text: #ffffff;
   --hero-padding-left: 16px;
   --hero-padding-right: 16px;
   --hero-overflow-margin: 16px;
@@ -156,6 +157,7 @@
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 400;
+  color: var(--hero-headline-accent);
 }
 
 .socialHandle {
@@ -171,7 +173,7 @@
 }
 
 .socialHandle:hover {
-  color: var(--hero-headline);
+  color: #ffffff;
 }
 
 .description {
@@ -181,7 +183,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 @media (min-width: 1024px) {
@@ -240,13 +242,13 @@
 }
 
 .cta:hover {
-  background: #e8ff9a;
-  box-shadow: 0 8px 28px rgba(217, 249, 157, 0.25);
+  background: #1a2a26;
+  box-shadow: 0 8px 28px rgba(10, 26, 22, 0.35);
   transform: translateY(-1px);
 }
 
 .cta:focus-visible {
-  outline: 2px solid var(--hero-cta);
+  outline: 2px solid #ffffff;
   outline-offset: 3px;
 }
 
@@ -299,7 +301,7 @@
   }
 
   .headlineAccent {
-    color: var(--hero-headline);
+    color: var(--hero-headline-accent);
   }
 
   .description {

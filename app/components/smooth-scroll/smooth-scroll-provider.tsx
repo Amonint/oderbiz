@@ -5,6 +5,12 @@ import { ReactLenis } from "lenis/react";
 import { useSyncExternalStore, type ReactNode } from "react";
 
 import { NAV_OFFSET_PX } from "@/app/lib/scroll-to-section";
+import { useLenisScrollTrigger } from "@/app/lib/use-lenis-scroll-trigger";
+
+function LenisScrollTriggerBridge() {
+  useLenisScrollTrigger();
+  return null;
+}
 
 const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
 
@@ -49,6 +55,7 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
 
   return (
     <ReactLenis root options={lenisOptions}>
+      <LenisScrollTriggerBridge />
       {children}
     </ReactLenis>
   );

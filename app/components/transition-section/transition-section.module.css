@@ -1,0 +1,275 @@
+.root {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.masonrySection {
+  position: relative;
+  z-index: 1;
+  margin-top: -30vh;
+  background: var(--story-surface, #d8d9d7);
+  color: var(--brand-ink, #0a0a0a);
+}
+
+.pinOuter {
+  position: relative;
+  width: 100%;
+}
+
+.pinnedViewport {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textStage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 30;
+  width: min(36rem, 88vw);
+  min-height: clamp(120px, 18vh, 200px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.textSlide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.textSlideInitial {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sectionHeading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.8vw, 44px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--brand-ink, #0a0a0a);
+}
+
+.sectionSubheading {
+  margin: 0;
+  font-size: clamp(13px, 1.1vw, 16px);
+  color: color-mix(in oklch, var(--brand-ink, #0a0a0a) 55%, transparent);
+}
+
+.introLine {
+  margin: 0;
+  max-width: min(520px, 92vw);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.2vw, 38px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--brand-ink, #0a0a0a);
+}
+
+.introLineDark {
+  color: color-mix(in oklch, var(--brand-ink, #0a0a0a) 72%, transparent);
+}
+
+.masonryCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.masonryRowLayer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-inline: var(--page-margin, 16px);
+}
+
+.masonryRowLayer:nth-child(1) {
+  top: 6%;
+}
+
+.masonryRowLayer:nth-child(2) {
+  top: 24%;
+}
+
+.masonryRowLayer:nth-child(3) {
+  top: 58%;
+}
+
+.masonryRowLayer:nth-child(4) {
+  top: 72%;
+}
+
+.masonryRowDesktopOnly {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .masonryRowDesktopOnly {
+    display: grid;
+  }
+
+  .masonryRowLayer:nth-child(1) {
+    top: 4%;
+  }
+
+  .masonryRowLayer:nth-child(2) {
+    top: 20%;
+  }
+
+  .masonryRowLayer:nth-child(3) {
+    top: 52%;
+  }
+
+  .masonryRowLayer:nth-child(4) {
+    top: 66%;
+  }
+}
+
+.masonryCell {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.masonryCellLarge .worksGridItem {
+  padding-top: 115%;
+}
+
+.worksGridItem {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+}
+
+.worksGridImage {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+}
+
+.imageInner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid color-mix(in oklch, var(--brand-ink, #0a0a0a) 12%, transparent);
+}
+
+.figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Video card styles (variant="videos") */
+.cardFrame {
+  position: relative;
+  width: 100%;
+  padding-top: 130%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #1a1a1a;
+}
+
+.parallaxLayer {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.05) 50%,
+    transparent 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 16px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-family: var(--font-body);
+  font-size: clamp(10px, 0.65vw, 11px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 767px) {
+  .cardFrame {
+    padding-top: 130%;
+    border-radius: 6px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .masonrySection {
+    margin-top: -20vh;
+  }
+
+  .pinnedViewport {
+    min-height: 480px;
+  }
+
+  .masonryRowLayer:nth-child(3) {
+    top: 54%;
+  }
+}
