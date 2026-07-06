@@ -9,6 +9,7 @@
   --brand-yellow: #fdc831;
   --brand-orange: #f28f22;
   --brand-coral: #ff425d;
+  --brand-hero: #255954;
   --story-surface: #d8d9d7;
 
   /* Superficies y texto derivados */
@@ -125,7 +126,7 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   overflow-y: visible;
-  background: var(--brand-coral, #ff425d);
+  background: var(--brand-hero, #255954);
   color: #ffffff;
   z-index: 3;
 }

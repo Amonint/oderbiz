@@ -1,8 +1,8 @@
 /* Superside-style hero tokens */
 .heroSection {
-  --hero-bg: var(--brand-coral, #ff425d);
+  --hero-bg: var(--brand-hero, #255954);
   --hero-headline: #ffffff;
-  --hero-headline-accent: #0a1a16;
+  --hero-headline-accent: #d8d9d7;
   --hero-cta: #0a1a16;
   --hero-cta-text: #ffffff;
   --hero-padding-left: 16px;
