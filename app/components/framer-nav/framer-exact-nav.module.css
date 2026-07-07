@@ -87,12 +87,12 @@
 }
 
 .btnPrimary {
-  color: #ffffff;
-  background: #0a1a16;
+  color: #0a1a16;
+  background: #d9f99d;
 }
 
 .btnPrimary:hover {
-  background: #1a2a26;
+  background: #e8ff9a;
 }
 
 .btnOutline {

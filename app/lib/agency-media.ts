@@ -22,16 +22,15 @@ export type StoryVideoItem = HeroVideoItem & {
 };
 
 const VIDEOS_OPTIMIZED = "/videos/optimized";
-const NUESTRA_HISTORIA = "/assets/nuestra historia";
 
 function storyVideo(
-  filename: string,
+  slug: string,
   alt: string,
   orientation: "portrait" | "landscape",
 ): StoryVideoItem {
   return {
-    src: publicMediaUrl(`${NUESTRA_HISTORIA}/${filename}`),
-    poster: "",
+    src: publicMediaUrl(`${VIDEOS_OPTIMIZED}/${slug}-web.mp4`),
+    poster: publicMediaUrl(`${VIDEOS_OPTIMIZED}/${slug}-poster.jpg`),
     alt,
     orientation,
   };
@@ -39,13 +38,13 @@ function storyVideo(
 
 /** Videos para la sección pinned Nuestra historia (7 clips). */
 export const STORY_VIDEOS: readonly StoryVideoItem[] = [
-  storyVideo("IMG_9413-web.mp4", "Oderbiz — nuestra historia", "portrait"),
-  storyVideo("WhatsApp Video 2026-06-29 at 4.02.26 PM.mp4", "Oderbiz — producción audiovisual", "portrait"),
-  storyVideo("WhatsApp Video 2026-06-29 at 4.04.44 PM.mp4", "Oderbiz — contenido de marca", "portrait"),
-  storyVideo("WhatsApp Video 2026-06-29 at 4.09.02 PM.mp4", "Oderbiz — cobertura de evento", "portrait"),
-  storyVideo("1-web.mp4", "Oderbiz — behind the scenes", "portrait"),
-  storyVideo("2-web.mp4", "Oderbiz — grabación corporativa", "portrait"),
-  storyVideo("3-web.mp4", "Oderbiz — contenido digital", "portrait"),
+  storyVideo("IMG_9413", "Oderbiz — nuestra historia", "portrait"),
+  storyVideo("story-wa-402", "Oderbiz — producción audiovisual", "portrait"),
+  storyVideo("story-wa-404", "Oderbiz — contenido de marca", "portrait"),
+  storyVideo("story-wa-409", "Oderbiz — cobertura de evento", "portrait"),
+  storyVideo("story-1", "Oderbiz — behind the scenes", "portrait"),
+  storyVideo("story-2", "Oderbiz — grabación corporativa", "portrait"),
+  storyVideo("story-3", "Oderbiz — contenido digital", "portrait"),
 ] as const;
 
 const SERVICIOS_IMAGES = [
