@@ -5,14 +5,23 @@ export type LayoutRect = {
   height: number;
 };
 
-export type MediaSize = "small" | "medium" | "large";
+type CellLayout = {
+  cell: HTMLElement;
+  tile: HTMLElement;
+  cellRect: LayoutRect;
+  hitRect: LayoutRect;
+  revealOrder: number;
+  scale: number;
+  origin: string;
+  hidden: boolean;
+};
 
-export function intersects(a: LayoutRect, b: LayoutRect): boolean {
+export function intersects(a: LayoutRect, b: LayoutRect, gap = 16): boolean {
   return (
-    a.x < b.x + b.width &&
-    a.x + a.width > b.x &&
-    a.y < b.y + b.height &&
-    a.y + a.height > b.y
+    a.x + gap < b.x + b.width &&
+    a.x + a.width - gap > b.x &&
+    a.y + gap < b.y + b.height &&
+    a.y + a.height - gap > b.y
   );
 }
 
@@ -32,7 +41,6 @@ export function getTextSafeZone(
   };
 }
 
-/** Escala 0.78 (cerca del texto) → 1 (esquinas alejadas). */
 function distanceScale(
   cellCenterX: number,
   cellCenterY: number,
@@ -43,7 +51,7 @@ function distanceScale(
   const dist = Math.hypot(cellCenterX - textCenterX, cellCenterY - textCenterY);
   const maxDist = Math.hypot(viewport.width * 0.5, viewport.height * 0.5);
   const t = Math.min(dist / maxDist, 1);
-  return 0.78 + t * 0.22;
+  return 0.88 + t * 0.12;
 }
 
 function transformOrigin(
@@ -69,6 +77,51 @@ function scaledRect(rect: LayoutRect, scale: number, origin: string): LayoutRect
   return { x, y, width: w, height: h };
 }
 
+function resolveCellCollisions(layouts: CellLayout[], safeZone: LayoutRect) {
+  const sorted = [...layouts].sort((a, b) => a.revealOrder - b.revealOrder);
+
+  for (let pass = 0; pass < 12; pass += 1) {
+    let changed = false;
+
+    for (let i = 0; i < sorted.length; i += 1) {
+      const current = sorted[i];
+      if (current.hidden) continue;
+
+      current.hitRect = scaledRect(current.cellRect, current.scale, current.origin);
+
+      if (intersects(current.hitRect, safeZone)) {
+        if (current.scale > 0.7) {
+          current.scale = Math.max(0.7, current.scale - 0.05);
+          changed = true;
+        } else {
+          current.hidden = true;
+          changed = true;
+        }
+      }
+
+      for (let j = 0; j < i; j += 1) {
+        const other = sorted[j];
+        if (other.hidden) continue;
+
+        other.hitRect = scaledRect(other.cellRect, other.scale, other.origin);
+        current.hitRect = scaledRect(current.cellRect, current.scale, current.origin);
+
+        if (intersects(current.hitRect, other.hitRect)) {
+          if (current.scale > 0.7) {
+            current.scale = Math.max(0.7, current.scale - 0.04);
+            changed = true;
+          } else {
+            current.hidden = true;
+            changed = true;
+          }
+        }
+      }
+    }
+
+    if (!changed) break;
+  }
+}
+
 export function applySafePinnedLayout(viewport: HTMLElement, textStage: HTMLElement) {
   const vpRect = viewport.getBoundingClientRect();
   const viewportBox: LayoutRect = {
@@ -81,10 +134,12 @@ export function applySafePinnedLayout(viewport: HTMLElement, textStage: HTMLElem
   const textCenterX = safeZone.x + safeZone.width / 2;
   const textCenterY = safeZone.y + safeZone.height / 2;
 
-  const cells = viewport.querySelectorAll<HTMLElement>("[data-masonry-reveal]");
+  const layouts: CellLayout[] = [];
 
-  cells.forEach((cell) => {
+  viewport.querySelectorAll<HTMLElement>("[data-masonry-reveal]").forEach((cell) => {
     const tile = cell.querySelector<HTMLElement>("[data-masonry-tile]");
+    if (!tile) return;
+
     const rect = cell.getBoundingClientRect();
     const cellRect: LayoutRect = {
       x: rect.left - vpRect.left,
@@ -97,19 +152,34 @@ export function applySafePinnedLayout(viewport: HTMLElement, textStage: HTMLElem
     const cy = cellRect.y + cellRect.height / 2;
     const scale = distanceScale(cx, cy, textCenterX, textCenterY, viewportBox);
     const origin = transformOrigin(cx, cy, textCenterX, textCenterY);
+    const revealOrder = Number(cell.getAttribute("data-reveal-order")) || 0;
 
-    if (tile) {
-      tile.style.transform = `scale(${scale.toFixed(3)})`;
-      tile.style.transformOrigin = origin;
-    }
+    layouts.push({
+      cell,
+      tile,
+      cellRect,
+      hitRect: scaledRect(cellRect, scale, origin),
+      revealOrder,
+      scale,
+      origin,
+      hidden: false,
+    });
+  });
 
-    const hitRect = scaledRect(cellRect, scale, origin);
+  resolveCellCollisions(layouts, safeZone);
 
-    if (intersects(hitRect, safeZone)) {
-      cell.style.visibility = "hidden";
+  layouts.forEach(({ cell, tile, scale, origin, hitRect, revealOrder, hidden }) => {
+    const blocked = hidden || intersects(hitRect, safeZone, 8);
+
+    tile.style.transform = blocked ? "scale(1)" : `scale(${scale.toFixed(3)})`;
+    tile.style.transformOrigin = origin;
+    cell.style.zIndex = String(revealOrder);
+
+    if (blocked) {
+      cell.style.display = "none";
       cell.dataset.layoutVisible = "false";
     } else {
-      cell.style.visibility = "";
+      cell.style.display = "";
       cell.dataset.layoutVisible = "true";
     }
   });

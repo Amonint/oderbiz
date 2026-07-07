@@ -17,7 +17,36 @@ export type HeroVideoItem = {
   alt: string;
 };
 
+export type StoryVideoItem = HeroVideoItem & {
+  orientation: "portrait" | "landscape";
+};
+
 const VIDEOS_OPTIMIZED = "/videos/optimized";
+const NUESTRA_HISTORIA = "/assets/nuestra historia";
+
+function storyVideo(
+  filename: string,
+  alt: string,
+  orientation: "portrait" | "landscape",
+): StoryVideoItem {
+  return {
+    src: publicMediaUrl(`${NUESTRA_HISTORIA}/${filename}`),
+    poster: "",
+    alt,
+    orientation,
+  };
+}
+
+/** Videos para la sección pinned Nuestra historia (7 clips). */
+export const STORY_VIDEOS: readonly StoryVideoItem[] = [
+  storyVideo("IMG_9413-web.mp4", "Oderbiz — nuestra historia", "portrait"),
+  storyVideo("WhatsApp Video 2026-06-29 at 4.02.26 PM.mp4", "Oderbiz — producción audiovisual", "portrait"),
+  storyVideo("WhatsApp Video 2026-06-29 at 4.04.44 PM.mp4", "Oderbiz — contenido de marca", "portrait"),
+  storyVideo("WhatsApp Video 2026-06-29 at 4.09.02 PM.mp4", "Oderbiz — cobertura de evento", "portrait"),
+  storyVideo("1-web.mp4", "Oderbiz — behind the scenes", "portrait"),
+  storyVideo("2-web.mp4", "Oderbiz — grabación corporativa", "portrait"),
+  storyVideo("3-web.mp4", "Oderbiz — contenido digital", "portrait"),
+] as const;
 
 const SERVICIOS_IMAGES = [
   publicMediaUrl(`${SERVICIOS}/coopsem-web-1024x1536.png`),
@@ -35,7 +64,7 @@ export const VARIOS_IMAGES = {
   studio: publicMediaUrl(`${VARIOS}/DSC08083.JPG (2).jpeg`),
   event: publicMediaUrl(`${VARIOS}/_DSC5637.JPG.jpeg`),
   production: publicMediaUrl(`${VARIOS}/_DSC5650.JPG (3).jpeg`),
-  acompañamiento: publicMediaUrl(`${VARIOS}/3-3.png`),
+  acompañamiento: publicMediaUrl(`${VARIOS}/3-3-web.jpg`),
   strength2Image: publicMediaUrl(`${VARIOS}/DSC5754-scaled.jpg`),
 } as const;
 

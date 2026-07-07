@@ -25,29 +25,34 @@ export function FramerAboutExact() {
 
   return (
     <section ref={ref} id="sobre-nosotros" className={styles.root} aria-labelledby="about-heading">
-      <header className={styles.sectionHeader}>
-        <motion.div
-          className={styles.aboutHeaderRow}
-          style={{ opacity: contentOpacity, y: contentY }}
-        >
-          <div className={styles.headerTitles}>
-            <h2 id="about-heading" className={styles.sectionTitle}>
-              {t("headerTitle")}
-            </h2>
-            <p className={styles.sectionSubtitle}>{t("headerSubtitle")}</p>
+      <header className={`${styles.sectionHeader} ${styles.aboutSectionHeader}`}>
+        <div className={styles.aboutHeaderRow}>
+          <div className={styles.aboutHeaderIntro}>
+            <div className={styles.headerTitles}>
+              <h2 id="about-heading" className={styles.sectionTitle}>
+                {t("headerTitle")}
+              </h2>
+              <p className={styles.sectionSubtitle}>{t("headerSubtitle")}</p>
+            </div>
+            <p className={styles.sectionDescription}>{t("headerDescription")}</p>
           </div>
 
-          <TextEffect
-            preset="blur"
-            per="word"
-            delay={0.15}
-            as="p"
-            justify
-            className={styles.bodyText}
+          <motion.div
+            className={styles.aboutBodyCol}
+            style={{ opacity: contentOpacity, y: contentY }}
           >
-            {t("paragraph1")}
-          </TextEffect>
-        </motion.div>
+            <TextEffect
+              preset="blur"
+              per="word"
+              delay={0.15}
+              as="p"
+              justify
+              className={styles.bodyText}
+            >
+              {t("paragraph1")}
+            </TextEffect>
+          </motion.div>
+        </div>
       </header>
 
       <AboutVideoMarquee videos={ABOUT_VIDEOS} />

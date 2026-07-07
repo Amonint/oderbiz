@@ -3,6 +3,7 @@ import type { FortalezasImageKey } from "@/app/lib/agency-media";
 export const STRENGTH_ITEMS = [
   {
     titleKey: "strength1Title",
+    descriptionKey: "intro1",
     imageKey: "strength1" as FortalezasImageKey,
   },
   {

@@ -1,0 +1,95 @@
+.root {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--background, #f6f5f3);
+  color: var(--brand-ink-strong);
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px clamp(80px, 10vw, 120px);
+  box-sizing: border-box;
+}
+
+.header {
+  max-width: 640px;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
+  margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.benefitCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: color-mix(in oklch, var(--brand-ink-strong) 4%, transparent);
+  border-radius: 12px;
+  border: 1px solid color-mix(in oklch, var(--brand-ink-strong) 8%, transparent);
+}
+
+.benefitNumber {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: color-mix(in oklch, var(--brand-ink-strong) 40%, transparent);
+}
+
+.benefitText {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--brand-ink-strong);
+}
+
+.ctaWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1.125rem 2.5rem;
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background: #0a0a0a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.guarantee {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: color-mix(in oklch, var(--brand-ink-strong) 50%, transparent);
+  font-style: italic;
+}

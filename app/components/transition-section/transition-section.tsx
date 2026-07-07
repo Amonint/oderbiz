@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { useTranslations } from "next-intl";
 
 import styles from "./transition-section.module.css";
-import { HERO_VIDEOS, type HeroVideoItem } from "@/app/lib/agency-media";
+import { STORY_VIDEOS, type StoryVideoItem } from "@/app/lib/agency-media";
 import { applySafePinnedLayout } from "@/app/lib/pinned-media-layout";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -35,6 +35,7 @@ type MasonryVideoItem = {
   colClass: string;
   itemClass?: string;
   revealOrder: number;
+  videoIndex: number;
 };
 
 type MasonryRowConfig = {
@@ -52,38 +53,32 @@ type TransitionSectionProps = {
 
 const INTRO_KEYS = ["intro1", "intro2", "intro3"] as const;
 
-function videoAt(index: number): HeroVideoItem {
-  return HERO_VIDEOS[index % HERO_VIDEOS.length];
+function storyVideo(index: number): StoryVideoItem {
+  return STORY_VIDEOS[index] ?? STORY_VIDEOS[0];
 }
 
-/** Solo celdas periféricas — tamaños large / medium / small como telhaclarke. */
+/** 7 slots periféricos sin columnas compartidas ni márgenes negativos. */
 const PINNED_ROWS: MasonryRowConfig[] = [
   {
     rowClassName: styles.masonryRowTop,
     items: [
       {
         size: "large",
-        colClass: "col-span-3",
-        itemClass: "-ml-col-2 xl:-ml-col-1",
+        colClass: "col-span-2 xl:col-span-3",
         revealOrder: 1,
-      },
-      {
-        size: "small",
-        colClass: "col-span-1 flex items-end",
-        itemClass: "max-xl:-ml-col-1 translate-y-1/2",
-        revealOrder: 2,
+        videoIndex: 0,
       },
       {
         size: "medium",
-        colClass: "col-span-2 xl:col-start-9 xl:col-end-11 max-xl:mt-150",
-        itemClass: "max-xl:-ml-col-1 xl:-translate-y-1/2",
-        revealOrder: 4,
+        colClass: "col-span-2 xl:col-start-9 xl:col-end-11",
+        revealOrder: 2,
+        videoIndex: 1,
       },
       {
-        size: "small",
-        colClass: "col-span-1 xl:col-start-12 xl:col-end-13 flex items-center max-xl:mt-65",
-        itemClass: "opacity-80 -translate-y-1/2",
-        revealOrder: 5,
+        size: "medium",
+        colClass: "col-span-2 xl:col-start-11 xl:col-end-13",
+        revealOrder: 3,
+        videoIndex: 2,
       },
     ],
   },
@@ -91,32 +86,28 @@ const PINNED_ROWS: MasonryRowConfig[] = [
     rowClassName: styles.masonryRowBottom,
     items: [
       {
+        size: "large",
+        colClass: "col-span-2 xl:col-span-3",
+        revealOrder: 4,
+        videoIndex: 3,
+      },
+      {
         size: "medium",
-        colClass: "col-span-2 flex items-end xl:items-center",
-        itemClass: "translate-y-1/2 xl:-ml-col-1 xl:-translate-y-1/4",
+        colClass: "col-span-1 xl:col-start-4 xl:col-end-6 flex xl:items-end",
+        revealOrder: 5,
+        videoIndex: 4,
+      },
+      {
+        size: "large",
+        colClass: "col-span-2 xl:col-start-9 xl:col-end-12 flex xl:items-end",
         revealOrder: 6,
-      },
-      {
-        size: "small",
-        colClass: "col-span-1 xl:col-start-3 xl:col-end-4 flex xl:items-end",
-        itemClass: "opacity-80 -translate-y-1/2 xl:translate-y-1/2",
-        revealOrder: 7,
-      },
-      {
-        size: "large",
-        colClass: "col-span-3 max-xl:order-last max-xl:translate-x-col-2",
-        itemClass: "xl:-ml-col-1",
-        revealOrder: 11,
-      },
-      {
-        size: "large",
-        colClass: "col-span-3 xl:col-start-10 xl:col-end-13 max-xl:hidden",
-        revealOrder: 10,
+        videoIndex: 5,
       },
       {
         size: "medium",
-        colClass: "col-span-2 xl:col-start-9 xl:col-end-11 max-xl:hidden",
-        revealOrder: 13,
+        colClass: "col-span-1 xl:col-start-12 xl:col-end-13 flex xl:items-end",
+        revealOrder: 7,
+        videoIndex: 6,
       },
     ],
   },
@@ -162,7 +153,7 @@ function MasonryVideoCell({
   video,
 }: {
   item: MasonryVideoItem;
-  video: HeroVideoItem;
+  video: StoryVideoItem;
 }) {
   return (
     <div
@@ -176,6 +167,7 @@ function MasonryVideoCell({
         className={[styles.worksGridItem, item.itemClass || ""].filter(Boolean).join(" ")}
         data-masonry-tile
         data-size={item.size}
+        data-orientation={video.orientation}
       >
         <div className={styles.worksGridImage}>
           <div className={styles.videoInner}>
@@ -280,19 +272,29 @@ function setupPinnedScroll(section: HTMLElement) {
   });
 
   const cellStart = 0.04;
-  const cellSpan = 0.68;
+  const cellSpan = 0.72;
+  const cellStep = cells.length > 1 ? cellSpan / (cells.length - 1) : cellSpan;
 
   cells.forEach((cell, index) => {
     const order = Number(cell.getAttribute("data-reveal-order")) || index + 1;
-    const fromTop = order <= 6;
-    const fromX = index % 2 === 0 ? -28 : 28;
-    const fromY = fromTop ? 14 : -14;
-    const at = cellStart + (index / Math.max(cells.length - 1, 1)) * cellSpan;
+    const fromTop = order <= 4;
+    const fromX = index % 2 === 0 ? -24 : 24;
+    const fromY = fromTop ? 12 : -12;
+    const at = cellStart + index * cellStep;
+
+    gsap.set(cell, { x: fromX, y: fromY, force3D: true });
 
     master.fromTo(
       cell,
-      { autoAlpha: 0, x: fromX, y: fromY, scale: 0.98 },
-      { autoAlpha: 1, x: 0, y: 0, scale: 1, duration: 0.08, ease: "none" },
+      { autoAlpha: 0 },
+      { autoAlpha: 1, duration: 0.1, ease: "none" },
+      at,
+    );
+
+    master.fromTo(
+      cell,
+      { x: fromX, y: fromY },
+      { x: 0, y: 0, duration: 0.1, ease: "none" },
       at,
     );
   });
@@ -327,7 +329,6 @@ export function TransitionSection({
           autoAlpha: 1,
           x: 0,
           y: 0,
-          scale: 1,
         });
         gsap.set(section.querySelectorAll("[data-text-slide]"), {
           autoAlpha: 1,
@@ -463,7 +464,7 @@ export function TransitionSection({
                     <MasonryVideoCell
                       key={item.revealOrder}
                       item={item}
-                      video={videoAt(item.revealOrder - 1)}
+                      video={storyVideo(item.videoIndex)}
                     />
                   ))}
                 </div>

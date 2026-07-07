@@ -1,16 +1,23 @@
 {
   "common": {
     "contact": "Contact Us",
-    "portfolio": "Portfolio",
-    "brandName": "Oderbiz"
+    "portfolio": "Case Studies",
+    "brandName": "Oderbiz",
+    "ctaDiagnosis": "Request Your Free Diagnosis",
+    "ctaMeeting": "Schedule a Meeting",
+    "remote": "We work 100% remotely",
+    "diagnosisCta": "I want my free diagnosis"
   },
   "nav": {
     "home": "Home",
     "about": "About Us",
     "services": "Services",
-    "work": "Portfolio",
-    "partners": "Partners",
-    "contact": "Contact Us",
+    "work": "Case Studies",
+    "partners": "Industries",
+    "contact": "Contact",
+    "methodology": "Our Process",
+    "whyOderbiz": "Why Oderbiz",
+    "diagnosis": "Free Diagnosis",
     "logoAria": "Oderbiz, home",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -32,7 +39,6 @@
     "attribution": "Katherine Jiménez - General Manager",
     "imageAlt": "Katherine Jiménez, General Manager at Oderbiz"
   },
-
   "ourStory": {
     "heading": "Our story",
     "subheading": "How we work to transform brands",
@@ -41,206 +47,208 @@
     "intro3": "Strategy, branding, and content that create real opportunities."
   },
   "about": {
-    "headerTitle": "Who",
-    "headerSubtitle": "are we?",
-    "headerDescription": "An innovative agency leading social media content creation, with comprehensive services for growing brands.",
-    "paragraph1": "We are an innovative agency leading the way in social media content creation. We take pride in offering a wide range of services designed to comprehensively meet our clients' needs.",
+    "headerTitle": "About",
+    "headerSubtitle": "Us",
+    "headerDescription": "Strategic marketing consulting for companies that want to grow for real.",
+    "paragraph1": "Oderbiz was created to solve a common problem: many growing companies invest in marketing without a clear strategy behind it, publish content without a business objective, and end up with a lot of activity but few results. We're a strategic marketing consultancy working remotely with companies across Latin America and the United States. We design the marketing, branding, and content strategy your company needs to increase its visibility, strengthen its brand, and generate real business opportunities.",
     "imageAlt": "Oderbiz team working on strategy"
   },
   "aboutSpecializations": {
-    "headerTitle": "We",
-    "headerSubtitle": "specialize in",
-    "headerDescription": "Content Marketing and Strategy services for established and growing businesses.",
-    "bodyIntro": "We take a holistic approach to marketing, analyzing your environment and business goals with a strategic vision to propose actions that strengthen your competitive edge.",
-    "paragraph1": "Oderbiz provides the tools your company needs to drive sales in a constantly evolving digital environment. As you build and grow, we guide your business to the forefront of digital marketing—as your partners every step of the way.",
-    "specialization1": "Digital strategy and executive support for businesses.",
-    "specialization2": "On-demand content creation and social media management.",
-    "specialization3": "Unlimited graphic design and video for businesses.",
-    "specialization1Title": "Digital strategy",
-    "specialization1Description": "Executive support for\ngrowing businesses with\na strategic vision.",
-    "specialization2Title": "Content & social",
-    "specialization2Description": "On-demand content creation\nand social media management\nfor your brand.",
-    "specialization3Title": "Design & video",
-    "specialization3Description": "Unlimited graphic design\nand video for businesses\nthat want to stand out.",
-    "specialization4Title": "Measurable results",
-    "specialization4Description": "We analyze every action\nwith clear data to optimize\nyour marketing investment.",
-    "imageAlt": "Oderbiz digital project portfolio"
+    "headerTitle": "Integrated",
+    "headerSubtitle": "strategies, not isolated actions",
+    "headerDescription": "We cover the three areas every brand needs to grow: strategy, identity, and purposeful content.",
+    "bodyIntro": "We cover the three areas every brand needs to grow.",
+    "paragraph1": "We cover the three areas every brand needs to grow: strategy, identity, and purposeful content.",
+    "specialization1": "Diagnosis, positioning, and action plan to attract more customers.",
+    "specialization2": "Brand identity, messaging, and differentiation from competitors.",
+    "specialization3": "Strategic content focused on generating leads and sales opportunities.",
+    "specialization1Title": "Marketing Strategy",
+    "specialization1Description": "Diagnosis, positioning,\nand action plan to\nattract more customers.",
+    "specialization2Title": "Branding",
+    "specialization2Description": "Brand identity, messaging,\nand differentiation\nfrom competitors.",
+    "specialization3Title": "Content & Demand Generation",
+    "specialization3Description": "Strategic content focused\non generating leads and\nsales opportunities.",
+    "specialization4Title": "Strategy that works",
+    "specialization4Description": "Not sure which you need?\nGet a free diagnosis.\nRequest yours now.",
+    "imageAlt": "Oderbiz strategic services"
   },
   "valuePillars": {
-    "headerTitle": "Our services",
-    "headerSubtitle": "include",
-    "headerDescription": "Our own resources, ongoing support, and strategic focus to meet the needs of large clients.",
-    "pillar1Title": "Full, guaranteed service",
-    "pillar1Text": "We have our own resources, teams, and infrastructure to support all the needs of large clients.",
-    "pillar1ImageAlt": "Oderbiz team and infrastructure",
-    "pillar2Title": "Ongoing support",
-    "pillar2Text": "We understand the value of your time and the urgency of every request. We become part of your team.",
-    "pillar2ImageAlt": "Close collaboration with the Oderbiz team",
-    "pillar3Title": "Strategy and results",
-    "pillar3Text": "We align strategically and tactically with your company's goals to deliver the results you need, when you need them.",
-    "pillar3ImageAlt": "Strategic project with measurable results"
+    "headerTitle": "Our",
+    "headerSubtitle": "services",
+    "headerDescription": "We cover the three areas every brand needs to grow: strategy, identity, and purposeful content.",
+    "pillar1Title": "Marketing Strategy",
+    "pillar1Text": "A clear roadmap to grow. Diagnosis, positioning, and action plan to attract more customers with measurable objectives.",
+    "pillar1ImageAlt": "Oderbiz marketing strategy",
+    "pillar2Title": "Branding",
+    "pillar2Text": "A brand that's recognized, remembered, and trusted. Identity, messaging, and differentiation from competitors.",
+    "pillar2ImageAlt": "Oderbiz branding",
+    "pillar3Title": "Content & Demand Generation",
+    "pillar3Text": "Content that generates business, not just reach. Strategy, channels, and funnels to produce qualified leads and conversions.",
+    "pillar3ImageAlt": "Oderbiz content and demand"
   },
   "fortalezas": {
-    "headerTitle": "Our",
-    "headerSubtitle": "strengths",
-    "headerDescription": "Creativity, structured processes, and a results-driven approach for brands that want to grow with purpose. Every project is backed by a multidisciplinary team and proven market methodologies.",
-    "intro1": "We have a team of creative professionals who work together to create high-quality content for social media.",
-    "intro2": "We focus on innovation and creativity to offer our clients a unique and differentiated experience.",
-    "strength1Title": "We are highly efficient in planning, producing, and distributing content to ensure it aligns with our clients' goals and needs.",
-    "strength2Title": "We understand the unique needs of large and growing businesses.",
-    "strength2Body": "Our services are tailored to handle complex projects and deliver stable results.",
-    "strength3Title": "We have structured processes adapted to our clients' needs.",
-    "strength3Body": "Through our experience as an established agency, we have tested various processes and work methodologies until we found one that lets us work as a team with the client and respond to their real needs.",
-    "closingLead": "The world is constantly changing, and Oderbiz follows that continuous line of change.",
-    "closingText": "In today's digital era, it's essential to approach communication and marketing with a fresh, modern perspective—and nothing beats a solid content marketing strategy.",
-    "imageAlt": "Oderbiz creative team producing content"
+    "headerTitle": "Why",
+    "headerSubtitle": "Oderbiz?",
+    "headerDescription": "We're not a social media agency. We're your strategic marketing consultancy.",
+    "intro1": "We design strategy, not manage profiles. Sales, leads, and conversion — always with clear metrics.",
+    "intro2": "",
+    "strength1Title": "Business-focused, not post-focused",
+    "strength2Title": "Senior team with regional reach",
+    "strength2Body": "Consultants with real marketing and branding experience. We serve clients across Latin America and the U.S., 100% remotely. Bilingual communication in Spanish and English.",
+    "strength3Title": "Measurable results in sales and conversion",
+    "strength3Body": "Every project is measured in sales, leads, reach, or conversion. We report with clear data, not vanity metrics.",
+    "closingLead": "Let's talk about your next step.",
+    "closingText": "Request your free diagnosis and find out what your brand needs to grow.",
+    "imageAlt": "Oderbiz consulting team"
   },
   "services": {
     "headerTitle": "Our",
     "headerSubtitle": "Services",
-    "headerDescription": "We offer integrated marketing, social media content creation, and on-demand corporate design. Each service adapts to your brand goals and your audience's needs.",
+    "headerDescription": "Integrated strategies connected to business results, not isolated actions.",
     "marketing": {
-      "title": "Integrated Marketing",
-      "description": "In today's digital era, it's essential to approach communication and marketing with a fresh, modern perspective—and nothing beats a solid content marketing strategy.",
-      "bullet1": "Buyer research and analysis to identify the right strategy.",
-      "bullet2": "Development of creative, effective advertising campaigns: Inbound and Outbound.",
-      "bullet3": "KPI measurement and optimization."
+      "title": "Marketing Strategy",
+      "description": "Diagnosis, positioning, and action plan to attract more customers.",
+      "bullet1": "Brand and current positioning diagnosis.",
+      "bullet2": "Market and competitive analysis.",
+      "bullet3": "Target audience and value proposition definition."
     },
     "content": {
-      "title": "Content creation and social media management",
-      "description": "Development of social media content strategies tailored to our clients' needs and their target audience.",
-      "bullet1": "Development of social media content strategies tailored to our clients' needs and their target audience.",
-      "bullet2": "Creation of original, high-quality content in multiple formats, including images and fully produced videos.",
-      "bullet3": "Scheduling, distribution, and analysis of content across social platforms to ensure objectives are met."
+      "title": "Branding",
+      "description": "Brand identity, messaging, and differentiation from competitors.",
+      "bullet1": "Brand identity definition (mission, values, personality).",
+      "bullet2": "Brand messaging and communication architecture.",
+      "bullet3": "Visual and tone guidelines."
     },
     "design": {
-      "title": "On-demand corporate design",
-      "description": "Corporate identity design, custom asset development, and corporate document layout.",
-      "bullet1": "Corporate identity design, including logos, color schemes, and style guides.",
-      "bullet2": "Custom design for websites, mobile applications, and printed marketing materials.",
-      "bullet3": "Corporate slide design and document layout."
+      "title": "Content & Demand Generation",
+      "description": "Strategic content focused on generating leads and sales opportunities.",
+      "bullet1": "Content strategy aligned with business goals.",
+      "bullet2": "Priority channel and format definition.",
+      "bullet3": "Lead generation funnels and conversion metrics."
     }
   },
   "portfolio": {
-    "headerTitle": "Our",
-    "headerSubtitle": "Work",
-    "headerDescription": "Results that make an impact in every detail. Real projects where strategy, design, and execution come together for brands that want to grow with purpose.",
-    "previewAlt": "Project {label}, preview",
+    "headerTitle": "Case",
+    "headerSubtitle": "Studies",
+    "headerDescription": "Real results for real companies. We don't measure likes. We measure sales, leads, reach, and conversion.",
+    "previewAlt": "Case study {label}, preview",
     "items": {
       "coopsem": {
         "titleGroups": ["COOPSEM", "Savings & Credit Cooperative"],
         "serviceGroups": ["Identity", "Branding", "Visual Systems"],
-        "excerpt": "Identity design for the municipal workers' credit cooperative in Loja: an isotype symbolizing unity and collaboration, brand manual, and merchandising applications."
+        "excerpt": "Brand repositioning + conversion-focused content strategy. Result: sales +38%, qualified traffic +62% in 6 months."
       },
       "padreJulian": {
         "titleGroups": ["Padre Julián Lorente", "Savings & Credit Cooperative"],
         "serviceGroups": ["Isotype", "Identity", "Visual Systems"],
-        "excerpt": "Isotype creation: evolution of the cooperative's logo into a friendly robotic character. Concept: blending institutional solidity with technological agility (\"La Julián at a click\"). Visual systems: service icon design, promotional banners, and adaptation for digital storefronts (App Store/Google Play)."
+        "excerpt": "Brand identity creation and digital content strategy. Significant increase in loan applications through digital channels."
       },
       "nettplus": {
         "titleGroups": ["NETTplus", "The Power of Fiber"],
         "serviceGroups": ["Social Media", "Branding", "Advertising"],
-        "excerpt": "Social Media: creation of a visual content calendar (lifestyle, gaming, promotional, and utility). Branding: adaptation of logos and the blue/green graphic line across all assets. Advertising: design of creatives for fiber optic plans and regional coverage."
+        "excerpt": "Comprehensive content and branding strategy for an internet provider. 150% increase in qualified leads, 20% reduction in cost per lead."
       },
       "odertek": {
         "titleGroups": ["ODERTEK", "Technologies S.A."],
-        "serviceGroups": ["Social Media", "Advertising", "Telecommunications"],
-        "excerpt": "Visual content and digital campaigns for a telecom wholesaler: product catalog, partnerships with leading brands, and promotions for network infrastructure."
+        "serviceGroups": ["Strategy", "Content", "Telecommunications"],
+        "excerpt": "Brand and content strategy for a telecom wholesaler. Improved B2B positioning and new sales channel generation."
       },
       "rectoralBoard": {
         "titleGroups": ["Rectoral Board", "Institute"],
-        "serviceGroups": ["Institutional", "Communication", "Training"],
-        "excerpt": "Visual identity and institutional communication for executive training and high-level consulting in organizational leadership and management."
+        "serviceGroups": ["Branding", "Communication", "Training"],
+        "excerpt": "Visual identity and content strategy for executive education. 90% increase in brand reach and 45% improvement in landing page conversion."
       },
       "sinCulpa": {
         "titleGroups": ["Sin culpa", "Healthy and delicious"],
         "serviceGroups": ["Branding", "Packaging", "Identity"],
-        "excerpt": "Full brand identity for a healthy food company: logo, stationery, packaging, and a natural, contemporary visual system."
+        "excerpt": "Full branding and positioning strategy for a healthy food brand. Successful entry into new distribution channels."
       },
       "uniODS": {
         "titleGroups": ["uniODS", "The sustainable university"],
         "serviceGroups": ["Identity", "SDGs", "UTPL"],
-        "excerpt": "Brand design integrating academic heritage and Sustainable Development Goals for UTPL's sustainable university initiative."
+        "excerpt": "Brand and content strategy for a university sustainability initiative. Increased program participation and visibility."
       },
       "maestrias": {
         "titleGroups": ["Master's Programs", "UTPL"],
-        "serviceGroups": ["Recruitment", "Social Media", "Campaigns"],
-        "excerpt": "Development of content focused on academic promotion and generating interest in graduate programs through educational and advertising formats."
+        "serviceGroups": ["Recruitment", "Content", "Campaigns"],
+        "excerpt": "Content and lead generation strategy for graduate programs. Increase in information requests and enrollments."
       }
     }
   },
   "team": {
     "headerTitle": "Our",
     "headerSubtitle": "Team",
-    "description": "Behind every project is a multidisciplinary team that combines strategy, design, and technology. Professionals with real experience helping brands grow—committed to measurable results and lasting relationships.",
+    "description": "Behind every project is a multidisciplinary team of consultants combining strategy, branding, and content. Professionals with real experience helping brands grow across LATAM and the U.S.",
     "portraitAlt": "Portrait: {name}"
   },
   "testimonials": {
     "headerTitle": "What our",
-    "headerSubtitle": "clients are saying",
-    "headerDescription": "Real experiences from brands and institutions that have grown alongside Oderbiz. Testimonials that reflect our commitment to quality, creativity, and concrete results.",
+    "headerSubtitle": "clients say",
+    "headerDescription": "Companies and institutions that have trusted Oderbiz with their marketing and branding strategy.",
     "byLabel": "By",
     "prev": "Previous",
     "next": "Next",
     "counter": "{current} / {total}",
     "items": {
       "marisol": {
-        "quote": "I chose the company because it is well known in Loja and serious about the service it provides. I liked the approach taken for my services on social media, with a style exclusive to me. I recommend this agency because I have seen great results in my business.",
+        "quote": "I chose Oderbiz because it's a serious, well-known company in Loja. I liked the strategic approach they took with my brand, with an exclusive style just for me. I've seen great results in my business.",
         "name": "Marisol Jiménez",
         "org": "Psicotelcon"
       },
       "ipAccess": {
-        "quote": "We are pleased with the openness and quick response to our requests. We recommend their services to other companies because they manage excellent processes.",
+        "quote": "We are very pleased with their openness and quick response. We recommend their services because they manage excellent processes and truly understand our business needs.",
         "name": "Ip Access",
         "org": "Internet provider"
       },
       "ortam": {
-        "quote": "I chose this agency based on references from work with other clients and I am happy with the results. I highlight the quality and style of the videos they have produced for my company. I recommend their services for their way and style of working.",
+        "quote": "I chose Oderbiz based on references from other clients. I really value the quality and style of the content they've developed for my company. I recommend them for their way of working.",
         "name": "Ortam",
         "org": "Automotive store"
       },
       "elizabeth": {
-        "quote": "We chose this agency for its responsibility and agility in its services. We are very satisfied with the quality of service they provide to our institution and we recommend their work because they provide the resources needed to meet the client's goals and needs.",
+        "quote": "We chose Oderbiz for their responsibility and agility. We are very satisfied with the quality of service and recommend their work because they provide the resources needed to meet institutional goals.",
         "name": "Elizabeth Hernández",
         "org": "Head of Cultural Outreach, UTPL"
       },
       "oscar": {
-        "quote": "I chose this agency because it is the best in the city. I highlight the work and friendliness of the staff; I recommend this company for its quality.",
+        "quote": "Oderbiz truly understands what companies need to grow. I highlight their work and professionalism.",
         "name": "Óscar Jiménez",
         "org": "CEO · Nettplus"
       },
       "luciano": {
-        "quote": "I like the teamwork between design, developers, and marketing that lets us think through solutions together and ensure a systemic view of the business. I chose this agency for its ability to understand my business aspirations, creativity in responses, flexibility in scheduling, and mutual commitment to entrepreneurial results.",
+        "quote": "I appreciate the teamwork between design, strategy, and marketing that allows us to think through solutions with a systemic view of the business. I chose Oderbiz for their ability to understand my business aspirations, their creativity, and their commitment to results.",
         "name": "Luciano Marcelino",
         "org": "CEO · Rectoral Board"
       },
       "maxxnet": {
-        "quote": "The most important characteristic of this agency is understanding the client, what they want to communicate, and reflecting that in their designs. I will keep recommending their work because they have experience and make a great contribution to companies' advertising.",
+        "quote": "The most important thing about Oderbiz is that they understand the client, what they want to communicate, and bring that to life in every project. I recommend them because they have experience and bring real value to company communications.",
         "name": "Maxxnet",
         "org": "Internet provider"
       }
     }
   },
   "partners": {
-    "headingLine1": ["THEY", "ALREADY", "BELIEVE"],
-    "headingLine2": ["IN", "US"],
-    "description": "Brands that trust our vision and execution. We build long-term relationships based on measurable results and transparent communication.",
-    "carouselRow1": "Partners and sponsors carousel, first row",
-    "carouselRow2": "Partners and sponsors carousel, second row"
+    "headingLine1": ["Industries", "and", "clients"],
+    "headingLine2": ["We", "serve"],
+    "description": "We work with growing companies across multiple industries, 100% remotely, anywhere in Latin America and the United States.",
+    "carouselRow1": "Industries and clients carousel, first row",
+    "carouselRow2": "Industries and clients carousel, second row"
   },
   "footer": {
-    "tagline": "Creative marketing and strategy agency. Trust and stability for major projects—the support growing brands need in Loja and beyond.",
+    "tagline": "Strategic marketing consultancy for growing companies in Latin America and the United States. Strategy, brand, and results — 100% remote.",
     "navAbout": "About Us",
     "navServices": "Services",
-    "navWork": "Portfolio",
-    "navContact": "Contact Us",
+    "navWork": "Case Studies",
+    "navContact": "Contact",
     "navBlog": "Blog",
     "addressLabel": "Address",
     "scheduleLabel": "Hours",
     "emailLabel": "Email",
     "phoneLabel": "Phone / WhatsApp",
-    "schedule": "Monday to Friday · 09:00 – 18:00",
-    "copyright": "© 2024 Oderbiz. All rights reserved.",
+    "address": "Loja, Ecuador — 100% remote service to LATAM and U.S.",
+    "schedule": "Monday to Friday · 09:00 – 18:00 (ECT)",
+    "emailValue": "marketingoderbiz@gmail.com",
+    "copyright": "© 2025 Oderbiz. All rights reserved.",
     "facebook": "Facebook",
     "twitter": "Twitter",
     "instagram": "@oderbiz",
@@ -250,15 +258,40 @@
     "navAria": "Footer navigation"
   },
   "meta": {
-    "title": "Oderbiz | marketing . strategy",
-    "description": "We are an innovative agency leading the way in social media content creation. Content Marketing and Strategy services for established and growing businesses.",
+    "title": "Oderbiz | Strategic Marketing Consultancy",
+    "description": "Strategic marketing consultancy for growing companies in Latin America and the United States. Strategy, branding, and content to deliver measurable business results.",
     "keywords": [
-      "digital marketing",
-      "digital strategy",
+      "strategic marketing consultancy",
+      "marketing for LATAM",
       "branding",
-      "marketing agency",
-      "digital advertising",
-      "Oderbiz"
+      "demand generation",
+      "marketing consulting",
+      "B2B marketing",
+      "Oderbiz",
+      "marketing strategy"
     ]
+  },
+  "diagnosis": {
+    "headerTitle": "Free",
+    "headerSubtitle": "Diagnosis",
+    "description": "Find out what's missing from your marketing strategy. A free 30-minute session where we analyze your brand, identify opportunities, and tell you — no strings attached — what you need to grow.",
+    "benefit1": "Quick review of your current positioning and visibility.",
+    "benefit2": "2-3 concrete improvement opportunities identified.",
+    "benefit3": "Clear recommendation for your brand's next step.",
+    "formName": "Name",
+    "formCompany": "Company",
+    "formCountry": "Country",
+    "formEmail": "Email",
+    "formPhone": "Phone / WhatsApp",
+    "formChallenge": "What's your main marketing challenge right now?",
+    "cta": "I want my free diagnosis",
+    "guarantee": "No commitment. No sales pitch. Just value."
+  },
+  "contactStrip": {
+    "title": "Let's talk about your brand",
+    "description": "We serve companies across Latin America and the United States, 100% remotely. Tell us your challenge and we'll get back to you within 24 business hours.",
+    "responseTime": "We'll get back to you within 24 business hours",
+    "email": "marketingoderbiz@gmail.com",
+    "whatsapp": "Message us on WhatsApp"
   }
 }

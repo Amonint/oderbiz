@@ -15,6 +15,7 @@ import { VisionSection } from "@/app/components/vision-section/vision-section";
 import { ValuePillars } from "@/app/components/value-pillars/value-pillars";
 import { FortalezasSection } from "@/app/components/fortalezas-section/fortalezas-section";
 import { OderbizTestimonials } from "@/app/components/oderbiz-testimonials/oderbiz-testimonials";
+import { ContactStrip } from "@/app/components/contact-strip/contact-strip";
 import { TransitionSection } from "@/app/components/transition-section/transition-section";
 import { routing, type Locale } from "@/i18n/routing";
 
@@ -46,6 +47,7 @@ export default async function Home({ params }: PageProps) {
       <FortalezasSection />
       <ServicesSection />
       <FramerWorkGridExact />
+      <ContactStrip />
       <FramerLineUpExact />
       <FramerPartnersExact />
       <OderbizTestimonials />
