@@ -57,6 +57,32 @@ encode_one() {
   echo "DONE  $slug  ${src_mb}MB -> ${out_mb}MB"
 }
 
+encode_story() {
+  local input="$1"
+  local slug="$2"
+  local saved_crf="$CRF"
+  local saved_width="$MAX_WIDTH"
+  local saved_rate="$MAXRATE"
+  local saved_buf="$BUFSIZE"
+  local saved_preset="$PRESET"
+  local saved_force="$FORCE"
+
+  CRF=23
+  MAX_WIDTH=720
+  MAXRATE=4M
+  BUFSIZE=8M
+  PRESET=medium
+  FORCE=1
+  encode_one "$input" "$slug"
+
+  CRF="$saved_crf"
+  MAX_WIDTH="$saved_width"
+  MAXRATE="$saved_rate"
+  BUFSIZE="$saved_buf"
+  PRESET="$saved_preset"
+  FORCE="$saved_force"
+}
+
 should_skip_asset() {
   local file="$1"
   local dir base stem web_candidate
@@ -76,26 +102,34 @@ should_skip_asset() {
   return 1
 }
 
-while IFS= read -r -d '' file; do
-  if should_skip_asset "$file"; then
-    echo "SKIP  $(basename "$file") (ya existe versión -web.mp4)"
-    continue
-  fi
-  encode_one "$file"
-done < <(find "$ROOT/public/assets/hero" "$ROOT/public/assets/aboutus" \
-  -type f \( -iname '*.mov' -o -iname '*.mp4' \) -print0 | sort -z)
+if [[ "${STORY_ONLY:-0}" != "1" ]]; then
+  while IFS= read -r -d '' file; do
+    if should_skip_asset "$file"; then
+      echo "SKIP  $(basename "$file") (ya existe versión -web.mp4)"
+      continue
+    fi
+    encode_one "$file"
+  done < <(find "$ROOT/public/assets/hero" "$ROOT/public/assets/aboutus" \
+    -type f \( -iname '*.mov' -o -iname '*.mp4' \) -print0 | sort -z)
+fi
 
 STORY_DIR="$ROOT/public/assets/nuestra historia"
 if [[ -d "$STORY_DIR" ]]; then
   echo ""
-  echo "Nuestra historia"
-  encode_one "$STORY_DIR/IMG_9413-web.mp4" "IMG_9413"
-  encode_one "$STORY_DIR/WhatsApp Video 2026-06-29 at 4.02.26 PM.mp4" "story-wa-402"
-  encode_one "$STORY_DIR/WhatsApp Video 2026-06-29 at 4.04.44 PM.mp4" "story-wa-404"
-  encode_one "$STORY_DIR/WhatsApp Video 2026-06-29 at 4.09.02 PM.mp4" "story-wa-409"
-  encode_one "$STORY_DIR/1-web.mp4" "story-1"
-  encode_one "$STORY_DIR/2-web.mp4" "story-2"
-  encode_one "$STORY_DIR/3-web.mp4" "story-3"
+  echo "Nuestra historia (máx. ${MAX_DURATION}s, 720px)"
+  encode_story "$STORY_DIR/IMG_9413-web.mp4" "IMG_9413"
+  encode_story "$STORY_DIR/WhatsApp Video 2026-06-29 at 4.02.26 PM.mp4" "story-wa-402"
+  encode_story "$STORY_DIR/WhatsApp Video 2026-06-29 at 4.04.44 PM.mp4" "story-wa-404"
+  encode_story "$STORY_DIR/WhatsApp Video 2026-06-29 at 4.09.02 PM.mp4" "story-wa-409"
+  encode_story "$STORY_DIR/1-web.mp4" "story-1"
+  encode_story "$STORY_DIR/2-web.mp4" "story-2"
+  encode_story "$STORY_DIR/3-web.mp4" "story-3"
+fi
+
+if [[ "${STORY_ONLY:-0}" == "1" ]]; then
+  echo ""
+  echo "Optimización de Nuestra historia completada en $OUT_DIR"
+  exit 0
 fi
 
 # Recorta MP4 ya optimizados sin fuente en assets (legacy / huérfanos).

@@ -4,5 +4,6 @@ public/assets/**/*.MP4
 public/videos/*.MOV
 public/videos/*.mov
 public/videos/*.mp4
+!public/videos/optimized/**
 node_modules
 .git

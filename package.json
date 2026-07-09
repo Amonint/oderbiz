@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "optimize-videos": "bash scripts/optimize-videos.sh",
+    "optimize-story-videos": "STORY_ONLY=1 bash scripts/optimize-videos.sh",
     "optimize-videos:force": "FORCE=1 bash scripts/optimize-videos.sh"
   },
   "dependencies": {
