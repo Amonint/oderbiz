@@ -17,35 +17,7 @@ export type HeroVideoItem = {
   alt: string;
 };
 
-export type StoryVideoItem = HeroVideoItem & {
-  orientation: "portrait" | "landscape";
-};
-
 const VIDEOS_OPTIMIZED = "/videos/optimized";
-
-function storyVideo(
-  slug: string,
-  alt: string,
-  orientation: "portrait" | "landscape",
-): StoryVideoItem {
-  return {
-    src: publicMediaUrl(`${VIDEOS_OPTIMIZED}/${slug}-web.mp4`),
-    poster: publicMediaUrl(`${VIDEOS_OPTIMIZED}/${slug}-poster.jpg`),
-    alt,
-    orientation,
-  };
-}
-
-/** Videos para la sección pinned Nuestra historia (7 clips). */
-export const STORY_VIDEOS: readonly StoryVideoItem[] = [
-  storyVideo("IMG_9413", "Oderbiz — nuestra historia", "portrait"),
-  storyVideo("story-wa-402", "Oderbiz — producción audiovisual", "portrait"),
-  storyVideo("story-wa-404", "Oderbiz — contenido de marca", "portrait"),
-  storyVideo("story-wa-409", "Oderbiz — cobertura de evento", "portrait"),
-  storyVideo("story-1", "Oderbiz — behind the scenes", "portrait"),
-  storyVideo("story-2", "Oderbiz — grabación corporativa", "portrait"),
-  storyVideo("story-3", "Oderbiz — contenido digital", "portrait"),
-] as const;
 
 const SERVICIOS_IMAGES = [
   publicMediaUrl(`${SERVICIOS}/coopsem-web-1024x1536.png`),
@@ -120,31 +92,28 @@ function heroVideo(slug: string, alt: string): HeroVideoItem {
 export const HERO_VIDEOS: readonly HeroVideoItem[] = [
   heroVideo("copy_82600A4E-476B-49C6-814F-59A83AB43EB6", "Oderbiz — cobertura de evento"),
   heroVideo("copy_F6B1FCD3-AE86-4207-BAFA-44744CFF350E", "Oderbiz — producción en vivo"),
-  heroVideo("IMG_2590", "Oderbiz — contenido audiovisual"),
-  heroVideo("IMG_2592", "Oderbiz — grabación corporativa"),
+  heroVideo("story-1", "Oderbiz — historia 1"),
+  heroVideo("story-2", "Oderbiz — historia 2"),
   heroVideo("IMG_2594", "Oderbiz — behind the scenes"),
   heroVideo("IMG_2603", "Oderbiz — producción de marca"),
   heroVideo("IMG_2721", "Oderbiz — cobertura de lanzamiento"),
   heroVideo("IMG_2722", "Oderbiz — evento en vivo"),
   heroVideo("IMG_9728", "Oderbiz — producción audiovisual"),
-  heroVideo(
-    "video-output-FBB80519-82FC-487D-BA56-E7040E4DF516-1",
-    "Oderbiz — contenido corporativo",
-  ),
+  heroVideo("story-3", "Oderbiz — historia 3"),
   heroVideo("njj", "Oderbiz — contenido adicional"),
 ] as const;
 
 /** Videos de la sección Quiénes somos — desde /assets/aboutus, comprimidos para web. */
 export const ABOUT_VIDEOS: readonly HeroVideoItem[] = [
-  heroVideo("copy_A7A4BBCD-EF10-407D-A369-655D56E0B83D", "Oderbiz — producción en estudio"),
+  heroVideo("IMG_9413", "Oderbiz — historia de marca"),
   heroVideo("copy_F6B1FCD3-AE86-4207-BAFA-44744CFF350E", "Oderbiz — producción en vivo"),
-  heroVideo("fa8f04c905c24b3a91fec9dc4968fb82", "Oderbiz — contenido corporativo"),
-  heroVideo("IMG_2473", "Oderbiz — grabación audiovisual"),
-  heroVideo("IMG_2475", "Oderbiz — behind the scenes"),
-  heroVideo("IMG_2485", "Oderbiz — producción de marca"),
+  heroVideo("story-wa-402", "Oderbiz — producción audiovisual"),
+  heroVideo("story-wa-404", "Oderbiz — contenido de marca"),
+  heroVideo("img-2717", "Oderbiz — cobertura de contenido"),
+  heroVideo("story-1", "Oderbiz — historia de marca"),
   heroVideo("IMG_2721", "Oderbiz — cobertura de lanzamiento"),
   heroVideo("IMG_2722", "Oderbiz — evento en vivo"),
-  heroVideo("IMG_2749", "Oderbiz — contenido digital"),
+  heroVideo("hero-5", "Oderbiz — contenido digital"),
   heroVideo("IMG_9728", "Oderbiz — producción audiovisual"),
 ] as const;
 

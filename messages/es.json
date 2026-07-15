@@ -287,11 +287,8 @@
     "cta": "Quiero mi diagnóstico gratuito",
     "guarantee": "Sin compromiso. Sin ventas. Solo valor."
   },
-  "contactStrip": {
-    "title": "Hablemos de tu marca",
-    "description": "Atendemos empresas en Latinoamérica y Estados Unidos de forma 100% remota. Cuéntanos tu reto y te contactamos en menos de 24 horas hábiles.",
-    "responseTime": "Te contactamos en menos de 24 horas hábiles",
-    "email": "marketingoderbiz@gmail.com",
-    "whatsapp": "Escríbenos por WhatsApp"
+  "ctaStrip": {
+    "text": "Hablemos de tu próximo paso. Solicita tu diagnóstico gratuito y descubre qué necesita tu marca para crecer.",
+    "cta": "Agenda una asesoría"
   }
 }

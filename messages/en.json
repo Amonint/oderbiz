@@ -287,11 +287,8 @@
     "cta": "I want my free diagnosis",
     "guarantee": "No commitment. No sales pitch. Just value."
   },
-  "contactStrip": {
-    "title": "Let's talk about your brand",
-    "description": "We serve companies across Latin America and the United States, 100% remotely. Tell us your challenge and we'll get back to you within 24 business hours.",
-    "responseTime": "We'll get back to you within 24 business hours",
-    "email": "marketingoderbiz@gmail.com",
-    "whatsapp": "Message us on WhatsApp"
+  "ctaStrip": {
+    "text": "Let's talk about your next step. Request your free diagnosis and discover what your brand needs to grow.",
+    "cta": "Schedule a consultation"
   }
 }

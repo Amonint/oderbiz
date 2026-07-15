@@ -6,6 +6,7 @@ import { useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { AGENCY_LOGO_MAIN } from "@/app/lib/agency-media";
+import { AGENCY_WHATSAPP_URL } from "@/app/lib/contact";
 import { TextEffect } from "@/components/ui/text-effect";
 
 import { FortalezasClosingDoodle } from "./fortalezas-closing-doodle";
@@ -55,6 +56,14 @@ export function FortalezasClosing({ lead, text }: FortalezasClosingProps) {
           <FortalezasClosingDoodle />
         </div>
         <div className="am-testiminial-info-wrapper">
+          <a
+            href={AGENCY_WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="am-closing-cta"
+          >
+            Agenda tu asesoría
+          </a>
           <Image
             src={AGENCY_LOGO_MAIN}
             alt={tCommon("brandName")}
