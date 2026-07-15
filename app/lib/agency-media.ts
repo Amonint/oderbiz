@@ -105,7 +105,6 @@ export const HERO_VIDEOS: readonly HeroVideoItem[] = [
 
 /** Videos de la sección Quiénes somos — desde /assets/aboutus, comprimidos para web. */
 export const ABOUT_VIDEOS: readonly HeroVideoItem[] = [
-  heroVideo("IMG_9413", "Oderbiz — historia de marca"),
   heroVideo("copy_F6B1FCD3-AE86-4207-BAFA-44744CFF350E", "Oderbiz — producción en vivo"),
   heroVideo("story-wa-402", "Oderbiz — producción audiovisual"),
   heroVideo("story-wa-404", "Oderbiz — contenido de marca"),
